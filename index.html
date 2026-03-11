@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Davis D — AI Wiz · App Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #F0F0F5;
-      --card: #FFFFFF;
-      --card-inner: #F5F5FA;
-      --text: #1A1A2E;
-      --text-muted: #9090A8;
-      --text-light: #C0C0D0;
-      --purple: #7C4DFF;
-      --purple-gradient: linear-gradient(135deg, #7C4DFF 0%, #B44DFF 100%);
-      --dark-btn: #1A1A2E;
-      --border: rgba(0,0,0,0.06);
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
-      --shadow-lg: 0 20px 60px rgba(0,0,0,0.1);
+      --bg: #f0f0f5;
+      --card: #ffffff;
+      --card-inner: #f5f5fa;
+      --text: #1a1a2e;
+      --text-muted: #9090a8;
+      --text-light: #c0c0d0;
+      --purple: #7c4dff;
+      --purple-gradient: linear-gradient(135deg, #7c4dff 0%, #b44dff 100%);
+      --dark-btn: #1a1a2e;
+      --border: rgba(0, 0, 0, 0.06);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
       --radius: 20px;
       --radius-sm: 14px;
+      --content-width: 640px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -36,7 +44,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ─── NAV ─── */
+    .container {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
@@ -51,19 +65,37 @@
       justify-content: space-between;
     }
 
-    .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
     .nav-avatar {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       background: var(--purple-gradient);
       border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; font-weight: 800; color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: white;
       flex-shrink: 0;
     }
 
-    .nav-name { font-size: 0.95rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
-    .nav-sub  { font-size: 0.68rem; color: var(--text-muted); }
+    .nav-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-sub {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
 
     .nav-badge {
       font-size: 0.6rem;
@@ -78,9 +110,9 @@
       box-shadow: var(--shadow-sm);
     }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
-      max-width: 640px;
+      max-width: var(--content-width);
       margin: 0 auto;
       padding: 3.5rem 2rem 2rem;
       text-align: center;
@@ -104,9 +136,9 @@
     }
 
     .hero-eyebrow-dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: var(--purple-gradient);
       background: var(--purple);
       flex-shrink: 0;
     }
@@ -131,7 +163,7 @@
       font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.7;
-      max-width: 420px;
+      max-width: 460px;
       margin: 0 auto 2rem;
     }
 
@@ -142,59 +174,140 @@
       flex-wrap: wrap;
     }
 
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 12px;
-      background: var(--dark-btn);
-      color: white;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 16px rgba(26,26,46,0.2);
-    }
-
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,26,46,0.3); }
-
+    .btn-primary,
     .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       padding: 0.7rem 1.5rem;
       border-radius: 12px;
-      background: var(--card);
-      color: var(--text);
       font-size: 0.8rem;
       font-weight: 600;
       text-decoration: none;
-      border: 1px solid var(--border);
-      cursor: pointer;
       transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--dark-btn);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26, 26, 46, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow-sm);
     }
 
-    .btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
 
-    /* ─── STATS ROW ─── */
+    /* ETHOS */
+    .ethos-outer {
+      padding: 0 2rem;
+      margin-top: 2rem;
+    }
+
+    .ethos-banner {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      background: var(--dark-btn);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .ethos-left {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ethos-eyebrow {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 0.35rem;
+    }
+
+    .ethos-headline {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+    }
+
+    .ethos-headline span {
+      background: var(--purple-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ethos-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .ethos-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .ethos-tagline {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.5;
+    }
+
+    .ethos-tagline strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.2px;
+    }
+
+    /* STATS */
     .stats-card {
       background: var(--card);
       border-radius: var(--radius);
       padding: 1.4rem 2rem;
-      margin: 0 auto 0;
-      max-width: 640px;
+      margin: 1rem auto 0;
+      max-width: var(--content-width);
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border);
       display: flex;
       align-items: stretch;
     }
 
-    .stat-block { flex: 1; text-align: center; }
-    .stat-block + .stat-block { border-left: 1px solid var(--border); }
+    .stat-block {
+      flex: 1;
+      text-align: center;
+    }
+
+    .stat-block + .stat-block {
+      border-left: 1px solid var(--border);
+    }
 
     .stat-number {
       font-size: 1.9rem;
@@ -204,7 +317,9 @@
       line-height: 1;
     }
 
-    .stat-number.purple { color: var(--purple); }
+    .stat-number.purple {
+      color: var(--purple);
+    }
 
     .stat-label {
       font-size: 0.58rem;
@@ -215,9 +330,9 @@
       margin-top: 0.25rem;
     }
 
-    /* ─── SECTION ─── */
+    /* SECTIONS */
     .section-wrap {
-      max-width: 640px;
+      max-width: var(--content-width);
       margin: 0 auto;
       padding: 0 2rem;
     }
@@ -238,12 +353,12 @@
       margin-bottom: 1rem;
     }
 
-    /* ─── APP CARDS ─── */
+    /* APP CARDS */
     .apps-list {
       display: flex;
       flex-direction: column;
       gap: 0.7rem;
-      max-width: 640px;
+      max-width: var(--content-width);
       margin: 0 auto;
       padding: 0 2rem 1rem;
     }
@@ -267,39 +382,50 @@
       box-shadow: var(--shadow-lg);
     }
 
-    /* category color accent */
     .app-card::after {
       content: '';
       position: absolute;
-      left: 0; top: 20%; bottom: 20%;
+      left: 0;
+      top: 20%;
+      bottom: 20%;
       width: 3px;
       border-radius: 0 3px 3px 0;
-      background: var(--accent-color, #7C4DFF);
+      background: var(--accent-color, #7c4dff);
       opacity: 0;
       transition: opacity 0.25s ease;
     }
 
-    .app-card:hover::after { opacity: 1; }
+    .app-card:hover::after {
+      opacity: 1;
+    }
 
     .app-icon-wrap {
-      width: 52px; height: 52px;
+      width: 52px;
+      height: 52px;
       border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.45rem;
       flex-shrink: 0;
       transition: transform 0.25s ease;
     }
 
-    .app-card:hover .app-icon-wrap { transform: scale(1.1) rotate(-5deg); }
+    .app-card:hover .app-icon-wrap {
+      transform: scale(1.1) rotate(-5deg);
+    }
 
-    .icon-bg-1 { background: #EDE8FF; --accent-color: #7C4DFF; }
-    .icon-bg-2 { background: #FFE8DD; --accent-color: #FF6B35; }
-    .icon-bg-3 { background: #DDF0FF; --accent-color: #2196F3; }
-    .icon-bg-4 { background: #E5FFE5; --accent-color: #4CAF50; }
-    .icon-bg-5 { background: #FFF3DD; --accent-color: #FF9800; }
-    .icon-bg-6 { background: #FFE5F0; --accent-color: #E91E8C; }
+    .icon-bg-1 { background: #ede8ff; --accent-color: #7c4dff; }
+    .icon-bg-2 { background: #ffe8dd; --accent-color: #ff6b35; }
+    .icon-bg-3 { background: #ddf0ff; --accent-color: #2196f3; }
+    .icon-bg-4 { background: #e5ffe5; --accent-color: #4caf50; }
+    .icon-bg-5 { background: #fff3dd; --accent-color: #ff9800; }
+    .icon-bg-6 { background: #ffe5f0; --accent-color: #e91e8c; }
 
-    .app-info { flex: 1; min-width: 0; }
+    .app-info {
+      flex: 1;
+      min-width: 0;
+    }
 
     .app-tag {
       font-size: 0.58rem;
@@ -328,10 +454,13 @@
     }
 
     .app-arrow {
-      width: 34px; height: 34px;
+      width: 34px;
+      height: 34px;
       border-radius: 10px;
       background: var(--card-inner);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--text-muted);
       font-size: 1.1rem;
       flex-shrink: 0;
@@ -345,38 +474,105 @@
       border-color: var(--dark-btn);
     }
 
-    /* placeholder card */
-    .app-card-placeholder {
-      opacity: 0.55;
-      cursor: default;
-      pointer-events: none;
+    /* PRICING */
+    .pricing-wrap {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .app-card-placeholder .app-arrow {
+    .pricing-strip {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .pricing-strip-inner {
       background: var(--card-inner);
-      color: var(--text-light);
+      border-radius: calc(var(--radius) - 4px);
+      margin: 4px;
+      padding: 1.5rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
     }
 
-    .soon-badge {
-      font-size: 0.55rem;
+    .pricing-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--purple-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .pricing-text {
+      flex: 1;
+    }
+
+    .pricing-label {
+      font-size: 0.58rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      background: #FFF3DD;
-      color: #C77B00;
-      border: 1px solid rgba(199,123,0,0.15);
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
+      color: var(--purple);
+      margin-bottom: 0.3rem;
     }
 
-    /* ─── MOBILE COMING SOON ─── */
+    .pricing-headline {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-body {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .pricing-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0 1.8rem 1.5rem;
+    }
+
+    .pricing-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pill-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+    }
+
+    /* MOBILE */
     .mobile-card {
       background: var(--card);
       border-radius: var(--radius);
       padding: 1.5rem;
-      max-width: 640px;
+      max-width: var(--content-width);
       margin: 0 auto 2rem;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border);
@@ -390,65 +586,111 @@
     }
 
     .mobile-icons-row {
-      display: flex; align-items: center; justify-content: center;
-      gap: 0.7rem; margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
     }
 
     .mobile-platform-icon {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       background: var(--card);
       border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.25rem;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border);
     }
 
-    .mobile-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-light); }
+    .mobile-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-light);
+    }
 
     .mobile-card-title {
-      font-size: 1rem; font-weight: 700; color: var(--text);
-      letter-spacing: -0.3px; margin-bottom: 0.4rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      margin-bottom: 0.4rem;
     }
 
     .mobile-card-desc {
-      font-size: 0.72rem; color: var(--text-muted); line-height: 1.6;
-      max-width: 320px; margin: 0 auto 1.2rem;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 340px;
+      margin: 0 auto 1.2rem;
     }
 
-    .platform-pill-row { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
+    .platform-pill-row {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     .platform-pill {
-      display: flex; align-items: center; gap: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
       padding: 0.4rem 1rem;
       border-radius: 999px;
       background: var(--card);
       border: 1px solid var(--border);
-      font-size: 0.68rem; font-weight: 600; color: var(--text);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--text);
       box-shadow: var(--shadow-sm);
     }
 
-    /* ─── FOOTER ─── */
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 1.5rem 2rem 3rem;
       color: var(--text-muted);
       font-size: 0.72rem;
-      max-width: 640px;
+      max-width: var(--content-width);
       margin: 0 auto;
       border-top: 1px solid var(--border);
     }
 
-    footer strong { color: var(--text); font-weight: 700; }
-    .footer-sub { margin-top: 0.3rem; color: var(--text-light); font-size: 0.63rem; }
+    footer strong {
+      color: var(--text);
+      font-weight: 700;
+    }
 
-    /* ─── ANIMATIONS ─── */
+    .footer-sub {
+      margin-top: 0.3rem;
+      color: var(--text-light);
+      font-size: 0.63rem;
+    }
+
+    .footer-ethos {
+      margin-top: 0.5rem;
+      font-size: 0.63rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ANIMATIONS */
     .fade-in {
       opacity: 0;
       transform: translateY(14px);
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .delay-1 { transition-delay: 0.05s; }
     .delay-2 { transition-delay: 0.11s; }
     .delay-3 { transition-delay: 0.17s; }
@@ -457,21 +699,71 @@
     .delay-6 { transition-delay: 0.35s; }
 
     @media (max-width: 480px) {
-      nav { padding: 0.9rem 1.25rem; }
-      .nav-badge { display: none; }
-      .hero { padding: 2.5rem 1.25rem 1.5rem; }
-      .stats-card { margin: 0 1.25rem; }
-      .section-wrap { padding: 0 1.25rem; }
-      .apps-list { padding: 0 1.25rem 1rem; }
-      .mobile-card { margin: 0 1.25rem 1.5rem; }
-      .app-desc { display: none; }
-      footer { padding: 1.5rem 1.25rem 2.5rem; }
+      nav {
+        padding: 0.9rem 1.25rem;
+      }
+
+      .nav-badge {
+        display: none;
+      }
+
+      .hero {
+        padding: 2.5rem 1.25rem 1.5rem;
+      }
+
+      .ethos-outer {
+        padding: 0 1.25rem;
+      }
+
+      .ethos-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .ethos-divider {
+        display: none;
+      }
+
+      .ethos-right {
+        text-align: left;
+      }
+
+      .stats-card {
+        margin: 1rem 1.25rem 0;
+      }
+
+      .section-wrap,
+      .apps-list,
+      .pricing-wrap {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .pricing-strip-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .pricing-pills {
+        padding: 0 1.25rem 1.25rem;
+      }
+
+      .mobile-card {
+        margin: 0 1.25rem 1.5rem;
+      }
+
+      .app-desc {
+        display: none;
+      }
+
+      footer {
+        padding: 1.5rem 1.25rem 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav>
     <div class="nav-left">
       <div class="nav-avatar">D</div>
@@ -483,27 +775,42 @@
     <div class="nav-badge">6 Apps Live</div>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero fade-in visible">
+  <header class="hero fade-in visible">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot"></span>
       Independent App Studio · Norway
     </div>
     <h1 class="hero-title">
-      Simple apps.<br>
-      <span class="gradient-word">Real impact.</span>
+      Software like it<br />
+      <span class="gradient-word">used to be.</span>
     </h1>
     <p class="hero-desc">
-      A collection of focused, beautifully crafted web apps — built to solve real problems without the clutter. Games, fitness, nutrition, and tools. All free to use.
+      Focused, beautifully crafted apps built to solve real problems without the clutter.
+      Pay once, own it forever. No subscriptions, no lock-in, no nonsense. You can test every app for free using the linked Vercel versions below.
     </p>
     <div class="hero-cta-row">
       <a href="#apps" class="btn-primary">Browse Apps ↓</a>
       <a href="#mobile" class="btn-secondary">📱 Coming to Mobile</a>
     </div>
-  </div>
+  </header>
 
-  <!-- STATS -->
-  <div class="stats-card fade-in visible" style="margin-top: 2rem;">
+  <section class="ethos-outer fade-in visible" aria-label="Studio philosophy">
+    <div class="ethos-banner">
+      <div class="ethos-left">
+        <div class="ethos-eyebrow">Our philosophy</div>
+        <div class="ethos-headline">Fighting the <span>subscription economy.</span></div>
+      </div>
+      <div class="ethos-divider" aria-hidden="true"></div>
+      <div class="ethos-right">
+        <div class="ethos-tagline">
+          <strong>Pay once. Own it forever.</strong>
+          No monthly fees. No recurring charges.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-card fade-in visible" aria-label="Studio stats">
     <div class="stat-block">
       <div class="stat-number">6</div>
       <div class="stat-label">Live Apps</div>
@@ -516,16 +823,14 @@
       <div class="stat-number">2</div>
       <div class="stat-label">Platforms Soon</div>
     </div>
-  </div>
+  </section>
 
-  <!-- APPS -->
-  <div class="section-wrap" id="apps">
+  <section class="section-wrap" id="apps">
     <h2 class="section-heading">All Apps</h2>
-    <p class="section-sub">Click any app to open it — everything runs in your browser.</p>
-  </div>
+    <p class="section-sub">Click any app to open the free Vercel test version — everything runs in your browser.</p>
+  </section>
 
   <div class="apps-list">
-
     <a href="https://beatoff.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-1">
       <div class="app-icon-wrap icon-bg-1">🪙</div>
       <div class="app-info">
@@ -541,7 +846,7 @@
       <div class="app-info">
         <p class="app-tag">Health</p>
         <p class="app-name">SimplyCal</p>
-        <p class="app-desc">No-nonsense calorie & protein tracker. Just the two numbers that matter.</p>
+        <p class="app-desc">No-nonsense calorie &amp; protein tracker. Just the two numbers that matter.</p>
       </div>
       <div class="app-arrow">›</div>
     </a>
@@ -566,7 +871,6 @@
       <div class="app-arrow">›</div>
     </a>
 
-    <!-- NEW: A4 Print Studio — URL placeholder -->
     <a href="https://a4-print-studio.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-5">
       <div class="app-icon-wrap icon-bg-5">🖨️</div>
       <div class="app-info">
@@ -577,7 +881,6 @@
       <div class="app-arrow">›</div>
     </a>
 
-    <!-- NEW: QR Code Generator — URL placeholder -->
     <a href="https://qr-code-generator-gamma-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-6">
       <div class="app-icon-wrap icon-bg-6">📱</div>
       <div class="app-info">
@@ -587,15 +890,39 @@
       </div>
       <div class="app-arrow">›</div>
     </a>
-
   </div>
 
-  <!-- MOBILE COMING SOON -->
-  <div class="section-wrap" id="mobile">
+  <section class="section-wrap">
+    <h2 class="section-heading">Pricing</h2>
+  </section>
+
+  <div class="pricing-wrap fade-in">
+    <div class="pricing-strip">
+      <div class="pricing-strip-inner">
+        <div class="pricing-icon">💸</div>
+        <div class="pricing-text">
+          <div class="pricing-label">The Davis D way</div>
+          <div class="pricing-headline">Pay once. Own it forever.</div>
+          <div class="pricing-body">
+            Every app is a one-time purchase — no subscriptions, no monthly fees, no nickel-and-diming.
+            You buy it, you keep it. Until then, you can test every app for free using the linked Vercel versions.
+          </div>
+        </div>
+      </div>
+      <div class="pricing-pills">
+        <div class="pricing-pill"><span class="pill-dot"></span> No subscription</div>
+        <div class="pricing-pill"><span class="pill-dot"></span> No recurring charges</div>
+        <div class="pricing-pill"><span class="pill-dot"></span> Yours forever</div>
+        <div class="pricing-pill"><span class="pill-dot"></span> Free updates included</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-wrap" id="mobile">
     <h2 class="section-heading">Coming Soon</h2>
-  </div>
+  </section>
 
-  <div class="mobile-card fade-in">
+  <section class="mobile-card fade-in">
     <div class="mobile-card-inner">
       <div class="mobile-icons-row">
         <div class="mobile-platform-icon">🍎</div>
@@ -605,527 +932,40 @@
         <div class="mobile-platform-icon">🤖</div>
       </div>
       <p class="mobile-card-title">Going Native 📱</p>
-      <p class="mobile-card-desc">All apps are being converted to native iOS and Android. Full performance, beautiful design — right in your pocket.</p>
+      <p class="mobile-card-desc">
+        All apps are being converted to native iOS and Android. Full performance, beautiful design — right in your pocket.
+        One purchase, both platforms.
+      </p>
       <div class="platform-pill-row">
         <div class="platform-pill">🍎 App Store</div>
         <div class="platform-pill">🤖 Google Play</div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
-    <p class="footer-sub">Norway · 2025 · All apps are free to use ✨</p>
+    <p class="footer-sub">Norway · 2025</p>
+    <p class="footer-ethos">Software like it used to be — pay once, own it forever.</p>
   </footer>
 
   <script>
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-  </script>
+    const fadeElements = document.querySelectorAll('.fade-in');
 
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      fadeElements.forEach((el) => obs.observe(el));
+    } else {
+      fadeElements.forEach((el) => el.classList.add('visible'));
+    }
+  </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Davis D — AI Wiz · App Studio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-          :root {
-                  --bg: #F0F0F5;
-                  --card: #FFFFFF;
-                  --card-inner: #F5F5FA;
-                  --text: #1A1A2E;
-                  --text-muted: #9090A8;
-                  --text-light: #C0C0D0;
-                  --purple: #7C4DFF;
-                  --purple-gradient: linear-gradient(135deg, #7C4DFF 0%, #B44DFF 100%);
-                  --dark-btn: #1A1A2E;
-                  --border: rgba(0,0,0,0.06);
-                  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
-                  --shadow-lg: 0 20px 60px rgba(0,0,0,0.1);
-                  --radius: 20px;
-                  --radius-sm: 14px;
-          }
-          *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-          html { scroll-behavior: smooth; }
-          body {
-                  background: var(--bg);
-                  color: var(--text);
-                  font-family: 'Inter', sans-serif;
-                  -webkit-font-smoothing: antialiased;
-          }
-
-          /* ─── NAV ─── */
-          nav {
-                  position: sticky; top: 0; z-index: 100;
-                  background: rgba(240, 240, 245, 0.88);
-                  backdrop-filter: blur(20px);
-                  -webkit-backdrop-filter: blur(20px);
-                  border-bottom: 1px solid var(--border);
-                  padding: 1rem 2rem;
-                  display: flex; align-items: center; justify-content: space-between;
-          }
-          .nav-left { display: flex; align-items: center; gap: 0.75rem; }
-          .nav-avatar {
-                  width: 36px; height: 36px;
-                  background: var(--purple-gradient);
-                  border-radius: 10px;
-                  display: flex; align-items: center; justify-content: center;
-                  font-size: 0.9rem; font-weight: 800; color: white; flex-shrink: 0;
-          }
-          .nav-name { font-size: 0.95rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
-          .nav-sub { font-size: 0.68rem; color: var(--text-muted); }
-          .nav-badge {
-                  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
-                  background: var(--card); border: 1px solid var(--border); color: var(--text-muted);
-                  padding: 0.3rem 0.75rem; border-radius: 999px; box-shadow: var(--shadow-sm);
-          }
-
-          /* ─── HERO ─── */
-          .hero { max-width: 640px; margin: 0 auto; padding: 3.5rem 2rem 2rem; text-align: center; }
-          .hero-eyebrow {
-                  display: inline-flex; align-items: center; gap: 0.5rem;
-                  background: var(--card); border: 1px solid var(--border); border-radius: 999px;
-                  padding: 0.35rem 1rem; font-size: 0.68rem; font-weight: 600; color: var(--text-muted);
-                  letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm);
-          }
-          .hero-eyebrow-dot {
-                  width: 6px; height: 6px; border-radius: 50%; background: var(--purple); flex-shrink: 0;
-          }
-          .hero-title {
-                  font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 900; color: var(--text);
-                  letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 1rem;
-          }
-          .hero-title .gradient-word {
-                  background: var(--purple-gradient);
-                  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-          }
-          .hero-desc {
-                  font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;
-                  max-width: 420px; margin: 0 auto 2rem;
-          }
-          .hero-cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
-          .btn-primary {
-                  display: inline-flex; align-items: center; gap: 0.5rem;
-                  padding: 0.7rem 1.5rem; border-radius: 12px; background: var(--dark-btn);
-                  color: white; font-size: 0.8rem; font-weight: 600; text-decoration: none;
-                  border: none; cursor: pointer; transition: all 0.2s ease;
-                  box-shadow: 0 4px 16px rgba(26,26,46,0.2);
-          }
-          .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,26,46,0.3); }
-          .btn-secondary {
-                  display: inline-flex; align-items: center; gap: 0.5rem;
-                  padding: 0.7rem 1.5rem; border-radius: 12px; background: var(--card);
-                  color: var(--text); font-size: 0.8rem; font-weight: 600; text-decoration: none;
-                  border: 1px solid var(--border); cursor: pointer; transition: all 0.2s ease;
-                  box-shadow: var(--shadow-sm);
-          }
-          .btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-
-          /* ─── ETHOS BANNER ─── */
-          .ethos-banner {
-                  max-width: 640px; margin: 0 auto 0;
-                  background: var(--dark-btn);
-                  border-radius: var(--radius);
-                  padding: 1.6rem 2rem;
-                  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
-                  flex-wrap: wrap;
-          }
-          .ethos-left { flex: 1; min-width: 0; }
-          .ethos-eyebrow {
-                  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-                  color: rgba(255,255,255,0.4); margin-bottom: 0.35rem;
-          }
-          .ethos-headline {
-                  font-size: 1.05rem; font-weight: 800; color: white; letter-spacing: -0.4px; line-height: 1.2;
-          }
-          .ethos-headline span {
-                  background: var(--purple-gradient);
-                  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-          }
-          .ethos-divider {
-                  width: 1px; height: 36px; background: rgba(255,255,255,0.12); flex-shrink: 0;
-          }
-          .ethos-right { text-align: right; flex-shrink: 0; }
-          .ethos-tagline {
-                  font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.55); line-height: 1.5;
-          }
-          .ethos-tagline strong {
-                  display: block; font-size: 0.85rem; font-weight: 700;
-                  color: white; letter-spacing: -0.2px;
-          }
-
-          /* ─── STATS ROW ─── */
-          .stats-card {
-                  background: var(--card); border-radius: var(--radius); padding: 1.4rem 2rem;
-                  margin: 0 auto 0; max-width: 640px; box-shadow: var(--shadow-sm);
-                  border: 1px solid var(--border); display: flex; align-items: stretch;
-          }
-          .stat-block { flex: 1; text-align: center; }
-          .stat-block + .stat-block { border-left: 1px solid var(--border); }
-          .stat-number { font-size: 1.9rem; font-weight: 900; color: var(--text); letter-spacing: -1.5px; line-height: 1; }
-          .stat-number.purple { color: var(--purple); }
-          .stat-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.25rem; }
-
-          /* ─── SECTION ─── */
-          .section-wrap { max-width: 640px; margin: 0 auto; padding: 0 2rem; }
-          .section-heading { font-size: 1.2rem; font-weight: 800; color: var(--text); letter-spacing: -0.5px; margin-bottom: 0.9rem; margin-top: 2.2rem; }
-          .section-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 1rem; }
-
-          /* ─── APP CARDS ─── */
-          .apps-list { display: flex; flex-direction: column; gap: 0.7rem; max-width: 640px; margin: 0 auto; padding: 0 2rem 1rem; }
-          .app-card {
-                  background: var(--card); border-radius: var(--radius); padding: 1.2rem 1.4rem;
-                  box-shadow: var(--shadow-sm); border: 1px solid var(--border);
-                  text-decoration: none; display: flex; align-items: center; gap: 1rem;
-                  transition: all 0.25s cubic-bezier(0.34, 1.4, 0.64, 1); position: relative;
-          }
-          .app-card:hover { transform: translateY(-3px) scale(1.01); box-shadow: var(--shadow-lg); }
-          .app-card::after {
-                  content: ''; position: absolute; left: 0; top: 20%; bottom: 20%;
-                  width: 3px; border-radius: 0 3px 3px 0;
-                  background: var(--accent-color, #7C4DFF); opacity: 0; transition: opacity 0.25s ease;
-          }
-          .app-card:hover::after { opacity: 1; }
-          .app-icon-wrap {
-                  width: 52px; height: 52px; border-radius: var(--radius-sm);
-                  display: flex; align-items: center; justify-content: center;
-                  font-size: 1.45rem; flex-shrink: 0; transition: transform 0.25s ease;
-          }
-          .app-card:hover .app-icon-wrap { transform: scale(1.1) rotate(-5deg); }
-          .icon-bg-1 { background: #EDE8FF; --accent-color: #7C4DFF; }
-          .icon-bg-2 { background: #FFE8DD; --accent-color: #FF6B35; }
-          .icon-bg-3 { background: #DDF0FF; --accent-color: #2196F3; }
-          .icon-bg-4 { background: #E5FFE5; --accent-color: #4CAF50; }
-          .icon-bg-5 { background: #FFF3DD; --accent-color: #FF9800; }
-          .icon-bg-6 { background: #FFE5F0; --accent-color: #E91E8C; }
-          .app-info { flex: 1; min-width: 0; }
-          .app-tag { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.12rem; }
-          .app-name { font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; margin-bottom: 0.2rem; }
-          .app-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-          .app-arrow {
-                  width: 34px; height: 34px; border-radius: 10px; background: var(--card-inner);
-                  display: flex; align-items: center; justify-content: center;
-                  color: var(--text-muted); font-size: 1.1rem; flex-shrink: 0;
-                  transition: all 0.2s ease; border: 1px solid var(--border);
-          }
-          .app-card:hover .app-arrow { background: var(--dark-btn); color: white; border-color: var(--dark-btn); }
-          .app-card-placeholder { opacity: 0.55; cursor: default; pointer-events: none; }
-          .app-card-placeholder .app-arrow { background: var(--card-inner); color: var(--text-light); }
-          .soon-badge {
-                  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-                  background: #FFF3DD; color: #C77B00; border: 1px solid rgba(199,123,0,0.15);
-                  padding: 0.2rem 0.6rem; border-radius: 999px; margin-left: 0.5rem; vertical-align: middle;
-          }
-
-          /* ─── PRICING PHILOSOPHY ─── */
-          .pricing-strip {
-                  max-width: 640px; margin: 0 auto;
-                  background: var(--card); border-radius: var(--radius);
-                  border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-                  overflow: hidden;
-          }
-          .pricing-strip-inner {
-                  background: var(--card-inner);
-                  border-radius: calc(var(--radius) - 4px);
-                  margin: 4px;
-                  padding: 1.5rem 1.8rem;
-                  display: flex; align-items: center; gap: 1.5rem;
-          }
-          .pricing-icon {
-                  width: 48px; height: 48px; border-radius: 14px;
-                  background: var(--purple-gradient);
-                  display: flex; align-items: center; justify-content: center;
-                  font-size: 1.3rem; flex-shrink: 0;
-          }
-          .pricing-text { flex: 1; }
-          .pricing-label {
-                  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-                  color: var(--purple); margin-bottom: 0.3rem;
-          }
-          .pricing-headline {
-                  font-size: 1rem; font-weight: 800; color: var(--text); letter-spacing: -0.4px; margin-bottom: 0.3rem;
-          }
-          .pricing-body { font-size: 0.72rem; color: var(--text-muted); line-height: 1.55; }
-          .pricing-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem 0 0 0; padding: 0 1.8rem 1.5rem; }
-          .pricing-pill {
-                  display: inline-flex; align-items: center; gap: 0.35rem;
-                  background: var(--card); border: 1px solid var(--border);
-                  border-radius: 999px; padding: 0.3rem 0.9rem;
-                  font-size: 0.65rem; font-weight: 600; color: var(--text-muted);
-                  box-shadow: var(--shadow-sm);
-          }
-          .pricing-pill .pill-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
-
-          /* ─── MOBILE COMING SOON ─── */
-          .mobile-card {
-                  background: var(--card); border-radius: var(--radius); padding: 1.5rem;
-                  max-width: 640px; margin: 0 auto 2rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border);
-          }
-          .mobile-card-inner {
-                  background: var(--card-inner); border-radius: var(--radius-sm); padding: 1.8rem 1.5rem; text-align: center;
-          }
-          .mobile-icons-row { display: flex; align-items: center; justify-content: center; gap: 0.7rem; margin-bottom: 1rem; }
-          .mobile-platform-icon {
-                  width: 44px; height: 44px; background: var(--card); border-radius: 12px;
-                  display: flex; align-items: center; justify-content: center;
-                  font-size: 1.25rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border);
-          }
-          .mobile-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-light); }
-          .mobile-card-title { font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; margin-bottom: 0.4rem; }
-          .mobile-card-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; max-width: 320px; margin: 0 auto 1.2rem; }
-          .platform-pill-row { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
-          .platform-pill {
-                  display: flex; align-items: center; gap: 0.4rem;
-                  padding: 0.4rem 1rem; border-radius: 999px; background: var(--card);
-                  border: 1px solid var(--border); font-size: 0.68rem; font-weight: 600; color: var(--text);
-                  box-shadow: var(--shadow-sm);
-          }
-
-          /* ─── FOOTER ─── */
-          footer {
-                  text-align: center; padding: 1.5rem 2rem 3rem;
-                  color: var(--text-muted); font-size: 0.72rem;
-                  max-width: 640px; margin: 0 auto; border-top: 1px solid var(--border);
-          }
-          footer strong { color: var(--text); font-weight: 700; }
-          .footer-sub { margin-top: 0.3rem; color: var(--text-light); font-size: 0.63rem; }
-          .footer-ethos { margin-top: 0.5rem; font-size: 0.63rem; color: var(--text-muted); font-style: italic; }
-
-          /* ─── ANIMATIONS ─── */
-          .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.4s ease, transform 0.4s ease; }
-          .fade-in.visible { opacity: 1; transform: translateY(0); }
-          .delay-1 { transition-delay: 0.05s; }
-          .delay-2 { transition-delay: 0.11s; }
-          .delay-3 { transition-delay: 0.17s; }
-          .delay-4 { transition-delay: 0.23s; }
-          .delay-5 { transition-delay: 0.29s; }
-          .delay-6 { transition-delay: 0.35s; }
-
-          @media (max-width: 480px) {
-                  nav { padding: 0.9rem 1.25rem; }
-                  .nav-badge { display: none; }
-                  .hero { padding: 2.5rem 1.25rem 1.5rem; }
-                  .ethos-banner { margin: 0 1.25rem; flex-direction: column; align-items: flex-start; }
-                  .ethos-divider { display: none; }
-                  .ethos-right { text-align: left; }
-                  .stats-card { margin: 0 1.25rem; }
-                  .section-wrap { padding: 0 1.25rem; }
-                  .apps-list { padding: 0 1.25rem 1rem; }
-                  .pricing-strip { margin: 0 1.25rem; }
-                  .pricing-strip-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
-                  .pricing-pills { padding: 0 1.25rem 1.25rem; }
-                  .mobile-card { margin: 0 1.25rem 1.5rem; }
-                  .app-desc { display: none; }
-                  footer { padding: 1.5rem 1.25rem 2.5rem; }
-          }
-        </style>
-  </head>
-  <body>
-
-      <!-- NAV -->
-      <nav>
-            <div class="nav-left">
-                    <div class="nav-avatar">D</div>div>
-                    <div>
-                              <div class="nav-name">Davis D · AI Wiz</div>
-                              <div class="nav-sub">App Studio</div>
-                    </div>
-            </div>
-            <div class="nav-badge">6 Apps Live</div>
-      </nav>
-
-      <!-- HERO -->
-      <div class="hero fade-in visible">
-            <div class="hero-eyebrow">
-                    <span class="hero-eyebrow-dot"></span>span>
-                    Independent App Studio · Norway
-            </div>
-            <h1 class="hero-title">
-                    Software like it<br>
-                    <span class="gradient-word">used to be.</span>span>
-            </h1>h1>
-            <p class="hero-desc">
-                    Focused, beautifully crafted apps — built to solve real problems without the clutter.
-                    Pay once, own it forever. No subscriptions, no lock-in, no nonsense.
-            </p>p>
-            <div class="hero-cta-row">
-                    <a href="#apps" class="btn-primary">Browse Apps ↓</a>a>
-                    <a href="#mobile" class="btn-secondary">📱 Coming to Mobile</a>a>
-            </div>
-      </div>
-
-      <!-- ETHOS BANNER -->
-      <div class="ethos-banner fade-in visible" style="margin-top: 2rem; padding-left: 2rem; padding-right: 2rem; max-width: none; background: none; display: block;">
-            <div style="max-width: 640px; margin: 0 auto; background: var(--dark-btn); border-radius: var(--radius); padding: 1.5rem 1.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 0;">
-                              <div class="ethos-eyebrow">Our philosophy</div>
-                              <div class="ethos-headline">Fighting the <span>subscription economy.</span></div>
-                    </div>
-                  <div class="ethos-divider"></div>
-                  <div class="ethos-right">
-                          <div class="ethos-tagline">
-                                    <strong>Pay once. Own it forever.</strong>
-                                    No monthly fees. No recurring charges.
-                          </div>
-                  </div>
-            </div>
-      </div>
-  
-    <!-- STATS -->
-    <div class="stats-card fade-in visible" style="margin-top: 1rem;">
-        <div class="stat-block">
-              <div class="stat-number">6</div>
-              <div class="stat-label">Live Apps</div>
-        </div>
-        <div class="stat-block">
-              <div class="stat-number purple">4</div>
-              <div class="stat-label">Categories</div>
-        </div>
-        <div class="stat-block">
-              <div class="stat-number">2</div>
-              <div class="stat-label">Platforms Soon</div>
-        </div>
-    </div>
-  
-    <!-- APPS -->
-    <div class="section-wrap" id="apps">
-        <h2 class="section-heading">All Apps</h2>h2>
-        <p class="section-sub">Click any app to open it — everything runs in your browser.</p>p>
-    </div>
-  
-    <div class="apps-list">
-        <a href="https://beatoff.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-1">
-              <div class="app-icon-wrap icon-bg-1">🪙</div>
-              <div class="app-info">
-                      <p class="app-tag">Game</p>p>
-                      <p class="app-name">Beat the Odds</p>p>
-                      <p class="app-desc">Coin-flipping incremental game — how long can your streak last?</p>p>
-              </div>
-              <div class="app-arrow">›</div>
-        </a>a>
-        <a href="https://simplycal.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-2">
-              <div class="app-icon-wrap icon-bg-2">⚡</div>
-              <div class="app-info">
-                      <p class="app-tag">Health</p>p>
-                      <p class="app-name">SimplyCal</p>p>
-                      <p class="app-desc">No-nonsense calorie & protein tracker. Just the two numbers that matter.</p>p>
-              </div>
-              <div class="app-arrow">›</div>
-        </a>a>
-        <a href="https://liftlog-davis.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-3">
-              <div class="app-icon-wrap icon-bg-3">🏋️</div>
-              <div class="app-info">
-                      <p class="app-tag">Fitness</p>p>
-                      <p class="app-name">LiftLog</p>p>
-                      <p class="app-desc">Personal workout journal — log reps, track progress, build consistency.</p>p>
-              </div>
-              <div class="app-arrow">›</div>
-        </a>a>
-        <a href="https://masterkeygame.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-4">
-              <div class="app-icon-wrap icon-bg-4">♟️</div>
-              <div class="app-info">
-                      <p class="app-tag">Strategy</p>p>
-                      <p class="app-name">Master Key</p>p>
-                      <p class="app-desc">Tic-tac-toe reimagined — AI opponents, multiple modes, real depth.</p>p>
-              </div>
-              <div class="app-arrow">›</div>
-        </a>a>
-        <a href="https://a4-print-studio.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-5">
-              <div class="app-icon-wrap icon-bg-5">🖨️</div>
-              <div class="app-info">
-                      <p class="app-tag">Tools</p>p>
-                      <p class="app-name">A4 Print Studio</p>p>
-                      <p class="app-desc">Design and print beautiful A4 layouts directly in your browser.</p>p>
-              </div>
-              <div class="app-arrow">›</div>
-        </a>a>
-        <a href="https://qr-code-generator-gamma-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-6">
-              <div class="app-icon-wrap icon-bg-6">📱</div>
-              <div class="app-info">
-                      <p class="app-tag">Tools</p>p>
-                      <p class="app-name">QR Code Generator</p>p>
-                      <p class="app-desc">Generate clean, customizable QR codes instantly — no sign-up needed.</p>p>
-              </div>
-              <div class="app-arrow">›</div>
-        </a>a>
-    </div>
-  
-    <!-- PRICING PHILOSOPHY -->
-    <div class="section-wrap">
-        <h2 class="section-heading">Pricing</h2>h2>
-    </div>
-    <div style="max-width: 640px; margin: 0 auto 0; padding: 0 2rem;" class="fade-in">
-        <div class="pricing-strip">
-              <div class="pricing-strip-inner">
-                      <div class="pricing-icon">💸</div>
-                      <div class="pricing-text">
-                                <div class="pricing-label">The Davis D way</div>
-                                <div class="pricing-headline">Pay once. Own it forever.</div>
-                                <div class="pricing-body">
-                                            Every app is a one-time purchase — no subscriptions, no monthly fees, no nickel-and-diming.
-                                            You buy it, you keep it. That's how software should work.
-                                </div>
-                      </div>
-              </div>
-              <div class="pricing-pills" style="display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0 1.8rem 1.5rem;">
-                      <div class="pricing-pill"><span class="pill-dot"></span> No subscription</div>
-                      <div class="pricing-pill"><span class="pill-dot"></span> No recurring charges</div>
-                      <div class="pricing-pill"><span class="pill-dot"></span> Yours forever</div>
-                      <div class="pricing-pill"><span class="pill-dot"></span> Free updates included</div>
-              </div>
-        </div>
-    </div>
-  
-    <!-- MOBILE COMING SOON -->
-    <div class="section-wrap" id="mobile">
-        <h2 class="section-heading">Coming Soon</h2>h2>
-    </div>
-    <div class="mobile-card fade-in">
-        <div class="mobile-card-inner">
-              <div class="mobile-icons-row">
-                      <div class="mobile-platform-icon">🍎</div>
-                      <div class="mobile-dot"></div>
-                      <div class="mobile-dot"></div>
-                      <div class="mobile-dot"></div>
-                      <div class="mobile-platform-icon">🤖</div>
-              </div>
-              <p class="mobile-card-title">Going Native 📱</p>p>
-              <p class="mobile-card-desc">All apps are being converted to native iOS and Android. Full performance, beautiful design — right in your pocket. One purchase, both platforms.</p>p>
-              <div class="platform-pill-row">
-                      <div class="platform-pill">🍎 App Store</div>
-                      <div class="platform-pill">🤖 Google Play</div>
-              </div>
-        </div>
-    </div>
-  
-    <!-- FOOTER -->
-    <footer>
-          <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
-        <p class="footer-sub">Norway · 2025</p>
-        <p class="footer-ethos">Software like it used to be — pay once, own it forever.</p>
-    </footer>
-  
-    <script>
-          const obs = new IntersectionObserver(entries => {
-                  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-          }, { threshold: 0.08 });
-          document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-    </script>
-  </body>
-</html>html>
-    </script></strong></p>
-    </footer></strong></span>
-                    </div>
-      </nav>
-  </body>
-    </style></title>
-  </head>
