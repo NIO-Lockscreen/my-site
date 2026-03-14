@@ -44,12 +44,17 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    a {
+      color: inherit;
+    }
+
     .container {
       max-width: var(--content-width);
       margin: 0 auto;
       padding: 0 2rem;
     }
 
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
@@ -109,6 +114,7 @@
       box-shadow: var(--shadow-sm);
     }
 
+    /* HERO */
     .hero {
       max-width: var(--content-width);
       margin: 0 auto;
@@ -125,7 +131,7 @@
       border-radius: 999px;
       padding: 0.35rem 1rem;
       font-size: 0.68rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-muted);
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -161,7 +167,7 @@
       font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.7;
-      max-width: 520px;
+      max-width: 500px;
       margin: 0 auto 2rem;
     }
 
@@ -173,7 +179,8 @@
     }
 
     .btn-primary,
-    .btn-secondary {
+    .btn-secondary,
+    .btn-email {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -205,11 +212,20 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .btn-secondary:hover {
+    .btn-secondary:hover,
+    .btn-email:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
     }
 
+    .btn-email {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ETHOS */
     .ethos-outer {
       padding: 0 2rem;
       margin-top: 2rem;
@@ -248,6 +264,7 @@
       color: white;
       letter-spacing: -0.4px;
       line-height: 1.2;
+      margin-bottom: 0.35rem;
     }
 
     .ethos-headline span {
@@ -257,9 +274,16 @@
       background-clip: text;
     }
 
+    .ethos-copy {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.62);
+      max-width: 360px;
+    }
+
     .ethos-divider {
       width: 1px;
-      height: 36px;
+      height: 56px;
       background: rgba(255, 255, 255, 0.12);
       flex-shrink: 0;
     }
@@ -273,103 +297,28 @@
       font-size: 0.72rem;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.55);
-      line-height: 1.5;
+      line-height: 1.55;
+      max-width: 200px;
     }
 
     .ethos-tagline strong {
       display: block;
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: 0.9rem;
+      font-weight: 800;
       color: white;
       letter-spacing: -0.2px;
+      margin-bottom: 0.15rem;
     }
 
-    .tagline-section,
-    .suggestion-card,
-    .stats-card,
-    .mobile-card {
+    /* STATS */
+    .stats-card {
       background: var(--card);
       border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .tagline-wrap,
-    .suggestion-wrap,
-    .section-wrap,
-    .pricing-wrap {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .tagline-section {
-      margin: 1rem auto 0;
-      padding: 1.5rem;
-    }
-
-    .tagline-inner {
-      background: var(--card-inner);
-      border-radius: var(--radius-sm);
-      padding: 1.35rem 1.4rem;
-    }
-
-    .tagline-label {
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--purple);
-      margin-bottom: 0.45rem;
-    }
-
-    .tagline-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .tagline-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .tagline-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .tagline-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.45rem 0.9rem;
-      border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .pill-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--purple);
-      flex-shrink: 0;
-    }
-
-    .stats-card {
       padding: 1.4rem 2rem;
       margin: 1rem auto 0;
       max-width: var(--content-width);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
       display: flex;
       align-items: stretch;
     }
@@ -404,6 +353,13 @@
       margin-top: 0.25rem;
     }
 
+    /* SECTIONS */
+    .section-wrap {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
     .section-heading {
       font-size: 1.2rem;
       font-weight: 800;
@@ -418,8 +374,10 @@
       color: var(--text-muted);
       margin-top: -0.5rem;
       margin-bottom: 1rem;
+      line-height: 1.6;
     }
 
+    /* APP CARDS */
     .apps-list {
       display: flex;
       flex-direction: column;
@@ -541,8 +499,11 @@
       border-color: var(--dark-btn);
     }
 
+    /* PRICING */
     .pricing-wrap {
-      padding-bottom: 0.2rem;
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
     .pricing-strip {
@@ -553,65 +514,32 @@
       overflow: hidden;
     }
 
-    .pricing-strip-inner {
-      background: var(--card-inner);
-      border-radius: calc(var(--radius) - 4px);
-      margin: 4px;
-      padding: 1.5rem 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+    /* SUGGESTION BOX */
+    .suggestion-wrap {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    .pricing-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: var(--purple-gradient);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
+    .suggestion-box {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2a2148 100%);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.6rem;
+      color: white;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
     }
 
-    .pricing-text {
-      flex: 1;
-    }
-
-    .pricing-label {
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--purple);
-      margin-bottom: 0.3rem;
-    }
-
-    .pricing-headline {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.4px;
-      margin-bottom: 0.3rem;
-    }
-
-    .pricing-body {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    .suggestion-card {
-      margin: 0 auto 2rem;
-      padding: 1.5rem;
-    }
-
-    .suggestion-inner {
-      background: linear-gradient(135deg, rgba(124, 77, 255, 0.08) 0%, rgba(180, 77, 255, 0.12) 100%);
-      border: 1px solid rgba(124, 77, 255, 0.12);
-      border-radius: var(--radius-sm);
-      padding: 1.4rem;
+    .suggestion-box::before {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(124, 77, 255, 0.28) 0%, rgba(124, 77, 255, 0) 70%);
+      pointer-events: none;
     }
 
     .suggestion-label {
@@ -619,67 +547,75 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--purple);
-      margin-bottom: 0.35rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 0.45rem;
+      position: relative;
+      z-index: 1;
     }
 
     .suggestion-title {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.4px;
-      margin-bottom: 0.35rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .suggestion-desc {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 1rem;
+    .suggestion-title span {
+      background: var(--purple-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .suggestion-copy {
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.72);
       max-width: 500px;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .suggestion-box {
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px dashed rgba(124, 77, 255, 0.28);
-      border-radius: 16px;
-      padding: 1rem 1.1rem;
+    .suggestion-actions {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
 
-    .suggestion-box-title {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.35rem;
-    }
-
-    .suggestion-box-text {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 0.8rem;
-    }
-
-    .suggestion-mail {
+    .email-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      padding: 0.55rem 0.9rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      color: var(--text);
-      text-decoration: none;
+      padding: 0.55rem 1rem;
       font-size: 0.72rem;
-      font-weight: 700;
-      word-break: break-all;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
 
+    .email-pill:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-2px);
+    }
+
+    /* MOBILE */
     .mobile-card {
+      background: var(--card);
+      border-radius: var(--radius);
       padding: 1.5rem;
       max-width: var(--content-width);
       margin: 0 auto 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
     }
 
     .mobile-card-inner {
@@ -754,6 +690,7 @@
       box-shadow: var(--shadow-sm);
     }
 
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 1.5rem 2rem 3rem;
@@ -782,6 +719,7 @@
       font-style: italic;
     }
 
+    /* ANIMATIONS */
     .fade-in {
       opacity: 0;
       transform: translateY(14px);
@@ -814,9 +752,7 @@
         padding: 2.5rem 1.25rem 1.5rem;
       }
 
-      .ethos-outer,
-      .tagline-wrap,
-      .suggestion-wrap {
+      .ethos-outer {
         padding: 0 1.25rem;
       }
 
@@ -839,15 +775,10 @@
 
       .section-wrap,
       .apps-list,
-      .pricing-wrap {
+      .pricing-wrap,
+      .suggestion-wrap {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
-      }
-
-      .pricing-strip-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
       }
 
       .mobile-card {
@@ -870,7 +801,7 @@
       <div class="nav-avatar">D</div>
       <div>
         <div class="nav-name">Davis D · AI Wiz</div>
-        <div class="nav-sub">App Studio</div>
+        <div class="nav-sub">The Anti-subscription Software Developer</div>
       </div>
     </div>
     <div class="nav-badge">7 Apps Live</div>
@@ -882,13 +813,13 @@
       Independent App Studio · Norway
     </div>
     <h1 class="hero-title">
-      Software like it<br />
-      <span class="gradient-word">used to be.</span>
+      The <span class="gradient-word">Anti-subscription</span><br />
+      software developer.
     </h1>
     <p class="hero-desc">
-      Focused, beautifully crafted apps built to solve real problems without the clutter.
-      Built by <strong>The Anti-subscription software developer</strong> — making useful software people can actually own.
-      Pay once, own it forever. No subscriptions, no lock-in, no nonsense. You can test every app for free using the linked Vercel versions below.
+      I build focused, beautifully crafted software without the endless monthly fee.
+      My goal is simple: take useful app ideas back from subscription bloat and make them clean, affordable, and worth owning.
+      Pay once, own it forever. No lock-in, no nonsense. You can test every app for free using the linked Vercel versions below.
     </p>
     <div class="hero-cta-row">
       <a href="#apps" class="btn-primary">Browse Apps ↓</a>
@@ -899,33 +830,18 @@
   <section class="ethos-outer fade-in visible" aria-label="Studio philosophy">
     <div class="ethos-banner">
       <div class="ethos-left">
-        <div class="ethos-eyebrow">Our philosophy</div>
-        <div class="ethos-headline">Fighting the <span>subscription economy.</span></div>
+        <div class="ethos-eyebrow">Studio philosophy</div>
+        <div class="ethos-headline">Software should be <span>bought</span>, not rented.</div>
+        <div class="ethos-copy">
+          Too many apps turned basic functionality into recurring payments. Davis D exists to push back:
+          simple tools, clean design, fair pricing, and software you actually get to keep.
+        </div>
       </div>
       <div class="ethos-divider" aria-hidden="true"></div>
       <div class="ethos-right">
         <div class="ethos-tagline">
           <strong>The Anti-subscription software developer</strong>
-          Pay once. Own it forever.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="tagline-wrap fade-in visible" aria-label="Tagline details">
-    <div class="tagline-section">
-      <div class="tagline-inner">
-        <div class="tagline-label">What that means</div>
-        <div class="tagline-title">The Anti-subscription software developer</div>
-        <p class="tagline-desc">
-          I build simple, useful software without turning every feature into a monthly bill.
-          The goal is straightforward: replace bloated subscription apps with clean one-time-purchase alternatives that respect your time, attention, and wallet.
-        </p>
-        <div class="tagline-pills">
-          <div class="tagline-pill"><span class="pill-dot"></span>No recurring fees</div>
-          <div class="tagline-pill"><span class="pill-dot"></span>Useful over bloated</div>
-          <div class="tagline-pill"><span class="pill-dot"></span>Own your tools</div>
-          <div class="tagline-pill"><span class="pill-dot"></span>Built for real people</div>
+          Building alternatives to bloated recurring-fee apps.
         </div>
       </div>
     </div>
@@ -1025,19 +941,19 @@
 
   <section class="section-wrap">
     <h2 class="section-heading">Pricing</h2>
+    <p class="section-sub">The whole point: useful software without getting trapped in yet another monthly payment.</p>
   </section>
 
   <div class="pricing-wrap fade-in">
-    <div class="pricing-strip">
-      <div class="pricing-strip-inner">
-        <div class="pricing-icon">💸</div>
-        <div class="pricing-text">
-          <div class="pricing-label">The Davis D way</div>
-          <div class="pricing-headline">Pay once. Own it forever.</div>
-          <div class="pricing-body">
-            One purchase. No subscriptions. No recurring charges.
-            Test every app for free using the linked Vercel versions.
-          </div>
+    <div class="pricing-strip" style="padding:1.6rem 1.8rem; display:flex; gap:1.2rem; align-items:center;">
+      <div style="width:48px;height:48px;border-radius:14px;background:var(--purple-gradient);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">💸</div>
+
+      <div style="flex:1;">
+        <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:0.3rem;">The Davis D way</div>
+        <div style="font-size:1rem;font-weight:800;color:var(--text);letter-spacing:-0.4px;margin-bottom:0.3rem;">Pay once. Own it forever.</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.55;">
+          One purchase. No subscriptions. No recurring charges.
+          Test every app for free using the linked Vercel versions.
         </div>
       </div>
     </div>
@@ -1045,31 +961,25 @@
 
   <section class="section-wrap" id="suggestions">
     <h2 class="section-heading">Suggestion Box</h2>
-    <p class="section-sub">Got an app you wish existed without a subscription? Tell me what to free next.</p>
+    <p class="section-sub">Got an app idea buried under a monthly fee? Tell me what should be liberated next.</p>
   </section>
 
-  <section class="suggestion-wrap fade-in">
-    <div class="suggestion-card">
-      <div class="suggestion-inner">
-        <div class="suggestion-label">Need something freed?</div>
-        <div class="suggestion-title">Need to be freed from an app subscription?</div>
-        <p class="suggestion-desc">
-          Let me know what app to free. If there’s a subscription app you like in theory but hate paying for every month,
-          send me your idea or suggestion and it may become the next Davis D project.
-        </p>
-
-        <div class="suggestion-box">
-          <div class="suggestion-box-title">Send suggestions to:</div>
-          <p class="suggestion-box-text">
-            Tell me the app name, what it does, which features matter most, and what you wish was simpler, cheaper, or better.
-          </p>
-          <a class="suggestion-mail" href="mailto:Daiwizsoftware@gmail.com?subject=App%20Suggestion%20%E2%80%94%20Free%20This%20Subscription">
-            ✉️ Daiwizsoftware@gmail.com
-          </a>
-        </div>
+  <div class="suggestion-wrap fade-in">
+    <div class="suggestion-box">
+      <div class="suggestion-label">Community requests</div>
+      <div class="suggestion-title">Need to be freed from an app <span>subscription?</span></div>
+      <div class="suggestion-copy">
+        Let me know what app to free. If there’s a bloated subscription product people are tired of paying for,
+        send your suggestion and I may build a cleaner pay-once alternative.
+        I’m especially interested in simple utility apps, creator tools, trackers, productivity tools, and niche everyday software.
+      </div>
+      <div class="suggestion-actions">
+        <a class="email-pill" href="mailto:Daiwizsoftware@gmail.com?subject=App%20Suggestion%20%E2%80%94%20Free%20This%20App">
+          ✉️ Daiwizsoftware@gmail.com
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 
   <section class="section-wrap" id="mobile">
     <h2 class="section-heading">Coming Soon</h2>
@@ -1099,7 +1009,7 @@
   <footer>
     <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
     <p class="footer-sub">Norway · 2025</p>
-    <p class="footer-ethos">The Anti-subscription software developer — software like it used to be.</p>
+    <p class="footer-ethos">The Anti-subscription software developer.</p>
   </footer>
 
   <script>
