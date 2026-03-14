@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
   <style>
     :root {
       --bg: #f0f0f5;
@@ -26,419 +25,67 @@
       --radius-sm: 14px;
       --content-width: 640px;
     }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .container {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(240, 240, 245, 0.88);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .nav-avatar {
-      width: 36px;
-      height: 36px;
-      background: var(--purple-gradient);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: white;
-      flex-shrink: 0;
-    }
-
-    .nav-name {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.3px;
-    }
-
-    .nav-sub {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-    }
-
-    .nav-badge {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* HERO */
-    .hero {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 3.5rem 2rem 2rem;
-      text-align: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.35rem 1rem;
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .hero-eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--purple);
-      flex-shrink: 0;
-    }
-
-    .hero-title {
-      font-size: clamp(2.2rem, 6vw, 3.2rem);
-      font-weight: 900;
-      color: var(--text);
-      letter-spacing: -1.5px;
-      line-height: 1.05;
-      margin-bottom: 1rem;
-    }
-
-    .hero-title .gradient-word {
-      background: var(--purple-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      max-width: 500px;
-      margin: 0 auto 2rem;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary,
-    .btn-secondary,
-    .btn-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--dark-btn);
-      color: white;
-      border: none;
-      box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26, 26, 46, 0.3);
-    }
-
-    .btn-secondary {
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-secondary:hover,
-    .btn-email:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .btn-email {
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* ETHOS */
-    .ethos-outer {
-      padding: 0 2rem;
-      margin-top: 2rem;
-    }
-
-    .ethos-banner {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      background: var(--dark-btn);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .ethos-left {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .ethos-eyebrow {
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.4);
-      margin-bottom: 0.35rem;
-    }
-
-    .ethos-headline {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: white;
-      letter-spacing: -0.4px;
-      line-height: 1.2;
-      margin-bottom: 0.35rem;
-    }
-
-    .ethos-headline span {
-      background: var(--purple-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .ethos-copy {
-      font-size: 0.75rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.62);
-      max-width: 360px;
-    }
-
-    .ethos-divider {
-      width: 1px;
-      height: 56px;
-      background: rgba(255, 255, 255, 0.12);
-      flex-shrink: 0;
-    }
-
-    .ethos-right {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .ethos-tagline {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.55);
-      line-height: 1.55;
-      max-width: 200px;
-    }
-
-    .ethos-tagline strong {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: white;
-      letter-spacing: -0.2px;
-      margin-bottom: 0.15rem;
-    }
-
-    /* STATS */
-    .stats-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1.4rem 2rem;
-      margin: 1rem auto 0;
-      max-width: var(--content-width);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: stretch;
-    }
-
-    .stat-block {
-      flex: 1;
-      text-align: center;
-    }
-
-    .stat-block + .stat-block {
-      border-left: 1px solid var(--border);
-    }
-
-    .stat-number {
-      font-size: 1.9rem;
-      font-weight: 900;
-      color: var(--text);
-      letter-spacing: -1.5px;
-      line-height: 1;
-    }
-
-    .stat-number.purple {
-      color: var(--purple);
-    }
-
-    .stat-label {
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-
-    /* SECTIONS */
-    .section-wrap {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .section-heading {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.5px;
-      margin-bottom: 0.9rem;
-      margin-top: 2.2rem;
-    }
-
-    .section-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: -0.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    /* APP CARDS */
-    .apps-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem 1rem;
-    }
-
-    .app-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1.2rem 1.4rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      transition: all 0.25s cubic-bezier(0.34, 1.4, 0.64, 1);
-      position: relative;
-    }
-
-    .app-card:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .app-card::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 20%;
-      bottom: 20%;
-      width: 3px;
-      border-radius: 0 3px 3px 0;
-      background: var(--accent-color, #7c4dff);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .app-card:hover::after {
-      opacity: 1;
-    }
-
-    .app-icon-wrap {
-      width: 52px;
-      height: 52px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.45rem;
-      flex-shrink: 0;
-      transition: transform 0.25s ease;
-    }
-
-    .app-card:hover .app-icon-wrap {
-      transform: scale(1.1) rotate(-5deg);
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .container { max-width: var(--content-width); margin: 0 auto; padding: 0 2rem; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(240, 240, 245, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-avatar { width: 36px; height: 36px; background: var(--purple-gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800; color: white; flex-shrink: 0; }
+    .nav-name { font-size: 0.95rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+    .nav-sub { font-size: 0.68rem; color: var(--text-muted); }
+    .nav-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; background: var(--card); border: 1px solid var(--border); color: var(--text-muted); padding: 0.3rem 0.75rem; border-radius: 999px; box-shadow: var(--shadow-sm); }
+    .hero { max-width: var(--content-width); margin: 0 auto; padding: 3.5rem 2rem 2rem; text-align: center; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 0.35rem 1rem; font-size: 0.68rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); }
+    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
+    .hero-title { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 900; color: var(--text); letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 1rem; }
+    .hero-title .gradient-word { background: var(--purple-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 500px; margin: 0 auto 2rem; }
+    .hero-cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary, .btn-secondary, .btn-email { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; cursor: pointer; }
+    .btn-primary { background: var(--dark-btn); color: white; border: none; box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26, 26, 46, 0.3); }
+    .btn-secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+    .btn-secondary:hover, .btn-email:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-email { background: var(--card); color: var(--text); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+    .ethos-outer { padding: 0 2rem; margin-top: 2rem; }
+    .ethos-banner { max-width: var(--content-width); margin: 0 auto; background: var(--dark-btn); border-radius: var(--radius); padding: 1.5rem 1.8rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .ethos-left { flex: 1; min-width: 0; }
+    .ethos-eyebrow { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); margin-bottom: 0.35rem; }
+    .ethos-headline { font-size: 1.05rem; font-weight: 800; color: white; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 0.35rem; }
+    .ethos-headline span { background: var(--purple-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .ethos-copy { font-size: 0.75rem; line-height: 1.6; color: rgba(255, 255, 255, 0.62); max-width: 360px; }
+    .ethos-divider { width: 1px; height: 56px; background: rgba(255, 255, 255, 0.12); flex-shrink: 0; }
+    .ethos-right { text-align: right; flex-shrink: 0; }
+    .ethos-tagline { font-size: 0.72rem; font-weight: 600; color: rgba(255, 255, 255, 0.55); line-height: 1.55; max-width: 200px; }
+    .ethos-tagline strong { display: block; font-size: 0.9rem; font-weight: 800; color: white; letter-spacing: -0.2px; margin-bottom: 0.15rem; }
+    .stats-card { background: var(--card); border-radius: var(--radius); padding: 1.4rem 2rem; margin: 1rem auto 0; max-width: var(--content-width); box-shadow: var(--shadow-sm); border: 1px solid var(--border); display: flex; align-items: stretch; }
+    .stat-block { flex: 1; text-align: center; }
+    .stat-block + .stat-block { border-left: 1px solid var(--border); }
+    .stat-number { font-size: 1.9rem; font-weight: 900; color: var(--text); letter-spacing: -1.5px; line-height: 1; }
+    .stat-number.purple { color: var(--purple); }
+    .stat-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.25rem; }
+    .section-wrap { max-width: var(--content-width); margin: 0 auto; padding: 0 2rem; }
+    .section-heading { font-size: 1.2rem; font-weight: 800; color: var(--text); letter-spacing: -0.5px; margin-bottom: 0.9rem; margin-top: 2.2rem; }
+    .section-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 1rem; line-height: 1.6; }
+    .beta-wrap { max-width: var(--content-width); margin: 0.8rem auto 0; padding: 0 2rem; }
+    .beta-banner { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.4rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm); }
+    .beta-icon { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #00c97a 0%, #00a8e8 100%); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .beta-text { flex: 1; min-width: 0; }
+    .beta-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #00a060; margin-bottom: 0.2rem; }
+    .beta-headline { font-size: 0.88rem; font-weight: 800; color: var(--text); letter-spacing: -0.3px; margin-bottom: 0.2rem; }
+    .beta-desc { font-size: 0.7rem; color: var(--text-muted); line-height: 1.55; }
+    .beta-action { flex-shrink: 0; }
+    .beta-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--card-inner); border: 1px solid var(--border); border-radius: 999px; padding: 0.45rem 0.9rem; font-size: 0.68rem; font-weight: 600; color: var(--text); text-decoration: none; transition: all 0.2s ease; white-space: nowrap; }
+    .beta-pill:hover { background: var(--dark-btn); color: white; border-color: var(--dark-btn); transform: translateY(-1px); }
+    .apps-list { display: flex; flex-direction: column; gap: 0.7rem; max-width: var(--content-width); margin: 0 auto; padding: 0 2rem 1rem; }
+    .app-card { background: var(--card); border-radius: var(--radius); padding: 1.2rem 1.4rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); text-decoration: none; display: flex; align-items: center; gap: 1rem; transition: all 0.25s cubic-bezier(0.34, 1.4, 0.64, 1); position: relative; }
+    .app-card:hover { transform: translateY(-3px) scale(1.01); box-shadow: var(--shadow-lg); }
+    .app-card::after { content: ''; position: absolute; left: 0; top: 20%; bottom: 20%; width: 3px; border-radius: 0 3px 3px 0; background: var(--accent-color, #7c4dff); opacity: 0; transition: opacity 0.25s ease; }
+    .app-card:hover::after { opacity: 1; }
+    .app-icon-wrap { width: 52px; height: 52px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.45rem; flex-shrink: 0; transition: transform 0.25s ease; }
+    .app-card:hover .app-icon-wrap { transform: scale(1.1) rotate(-5deg); }
     .icon-bg-1 { background: #ede8ff; --accent-color: #7c4dff; }
     .icon-bg-2 { background: #ffe8dd; --accent-color: #ff6b35; }
     .icon-bg-3 { background: #ddf0ff; --accent-color: #2196f3; }
@@ -446,610 +93,269 @@
     .icon-bg-5 { background: #fff3dd; --accent-color: #ff9800; }
     .icon-bg-6 { background: #ffe5f0; --accent-color: #e91e8c; }
     .icon-bg-7 { background: #e8fff7; --accent-color: #00b894; }
-
-    .app-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .app-tag {
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.12rem;
-    }
-
-    .app-name {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.3px;
-      margin-bottom: 0.2rem;
-    }
-
-    .app-desc {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .app-arrow {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: var(--card-inner);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      flex-shrink: 0;
-      transition: all 0.2s ease;
-      border: 1px solid var(--border);
-    }
-
-    .app-card:hover .app-arrow {
-      background: var(--dark-btn);
-      color: white;
-      border-color: var(--dark-btn);
-    }
-
-    /* PRICING */
-    .pricing-wrap {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .pricing-strip {
-      background: var(--card);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-    }
-
-    /* SUGGESTION BOX */
-    .suggestion-wrap {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .suggestion-box {
-      background: linear-gradient(135deg, #1a1a2e 0%, #2a2148 100%);
-      border-radius: var(--radius);
-      padding: 1.6rem 1.6rem;
-      color: white;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .suggestion-box::before {
-      content: '';
-      position: absolute;
-      right: -40px;
-      top: -40px;
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, rgba(124, 77, 255, 0.28) 0%, rgba(124, 77, 255, 0) 70%);
-      pointer-events: none;
-    }
-
-    .suggestion-label {
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 0.45rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .suggestion-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .suggestion-title span {
-      background: var(--purple-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .suggestion-copy {
-      font-size: 0.78rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.72);
-      max-width: 500px;
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .suggestion-actions {
-      display: flex;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    .email-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 999px;
-      padding: 0.55rem 1rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: white;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .email-pill:hover {
-      background: rgba(255,255,255,0.14);
-      transform: translateY(-2px);
-    }
-
-    /* MOBILE */
-    .mobile-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      max-width: var(--content-width);
-      margin: 0 auto 2rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-    }
-
-    .mobile-card-inner {
-      background: var(--card-inner);
-      border-radius: var(--radius-sm);
-      padding: 1.8rem 1.5rem;
-      text-align: center;
-    }
-
-    .mobile-icons-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      margin-bottom: 1rem;
-    }
-
-    .mobile-platform-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--card);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-    }
-
-    .mobile-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--text-light);
-    }
-
-    .mobile-card-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.3px;
-      margin-bottom: 0.4rem;
-    }
-
-    .mobile-card-desc {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 340px;
-      margin: 0 auto 1.2rem;
-    }
-
-    .platform-pill-row {
-      display: flex;
-      gap: 0.6rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .platform-pill {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: var(--text);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 1.5rem 2rem 3rem;
-      color: var(--text-muted);
-      font-size: 0.72rem;
-      max-width: var(--content-width);
-      margin: 0 auto;
-      border-top: 1px solid var(--border);
-    }
-
-    footer strong {
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    .footer-sub {
-      margin-top: 0.3rem;
-      color: var(--text-light);
-      font-size: 0.63rem;
-    }
-
-    .footer-ethos {
-      margin-top: 0.5rem;
-      font-size: 0.63rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    /* ANIMATIONS */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .delay-1 { transition-delay: 0.05s; }
-    .delay-2 { transition-delay: 0.11s; }
-    .delay-3 { transition-delay: 0.17s; }
-    .delay-4 { transition-delay: 0.23s; }
-    .delay-5 { transition-delay: 0.29s; }
-    .delay-6 { transition-delay: 0.35s; }
+    .app-info { flex: 1; min-width: 0; }
+    .app-tag { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.12rem; }
+    .app-name { font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; margin-bottom: 0.2rem; }
+    .app-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .app-arrow { width: 34px; height: 34px; border-radius: 10px; background: var(--card-inner); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 1.1rem; flex-shrink: 0; transition: all 0.2s ease; border: 1px solid var(--border); }
+    .app-card:hover .app-arrow { background: var(--dark-btn); color: white; border-color: var(--dark-btn); }
+    .pricing-wrap { max-width: var(--content-width); margin: 0 auto; padding: 0 2rem; }
+    .pricing-strip { background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .suggest-wrap { max-width: var(--content-width); margin: 0 auto; padding: 0 2rem; }
+    .suggest-box { background: linear-gradient(135deg, #1a1a2e 0%, #2a2148 100%); border-radius: var(--radius); padding: 1.8rem 1.8rem; color: white; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+    .suggest-box::before { content: ''; position: absolute; right: -40px; top: -40px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(124, 77, 255, 0.28) 0%, rgba(124, 77, 255, 0) 70%); pointer-events: none; }
+    .suggest-box::after { content: ''; position: absolute; left: -30px; bottom: -30px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(124, 77, 255, 0.15) 0%, rgba(124, 77, 255, 0) 70%); pointer-events: none; }
+    .suggest-title { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+    .suggest-title span { background: var(--purple-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .suggest-copy { font-size: 0.78rem; line-height: 1.7; color: rgba(255,255,255,0.68); max-width: 480px; margin-bottom: 1.4rem; position: relative; z-index: 1; }
+    .suggest-row { display: flex; gap: 0.7rem; flex-wrap: wrap; position: relative; z-index: 1; }
+    .suggest-pill { display: inline-flex; align-items: center; gap: 0.45rem; border-radius: 999px; padding: 0.6rem 1.1rem; font-size: 0.72rem; font-weight: 600; text-decoration: none; transition: all 0.2s ease; }
+    .suggest-pill-primary { background: white; color: var(--text); }
+    .suggest-pill-primary:hover { background: #f0f0f5; transform: translateY(-2px); }
+    .mobile-card { background: var(--card); border-radius: var(--radius); padding: 1.5rem; max-width: var(--content-width); margin: 0 auto 2rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
+    .mobile-card-inner { background: var(--card-inner); border-radius: var(--radius-sm); padding: 1.8rem 1.5rem; text-align: center; }
+    .mobile-icons-row { display: flex; align-items: center; justify-content: center; gap: 0.7rem; margin-bottom: 1rem; }
+    .mobile-platform-icon { width: 44px; height: 44px; background: var(--card); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
+    .mobile-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-light); }
+    .mobile-card-title { font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; margin-bottom: 0.4rem; }
+    .mobile-card-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; max-width: 340px; margin: 0 auto 1.2rem; }
+    .platform-pill-row { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
+    .platform-pill { display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1rem; border-radius: 999px; background: var(--card); border: 1px solid var(--border); font-size: 0.68rem; font-weight: 600; color: var(--text); box-shadow: var(--shadow-sm); }
+    footer { text-align: center; padding: 1.5rem 2rem 3rem; color: var(--text-muted); font-size: 0.72rem; max-width: var(--content-width); margin: 0 auto; border-top: 1px solid var(--border); }
+    footer strong { color: var(--text); font-weight: 700; }
+    .footer-sub { margin-top: 0.3rem; color: var(--text-light); font-size: 0.63rem; }
+    .footer-ethos { margin-top: 0.5rem; font-size: 0.63rem; color: var(--text-muted); font-style: italic; }
+    .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.05s; } .delay-2 { transition-delay: 0.11s; } .delay-3 { transition-delay: 0.17s; }
+    .delay-4 { transition-delay: 0.23s; } .delay-5 { transition-delay: 0.29s; } .delay-6 { transition-delay: 0.35s; }
     .delay-7 { transition-delay: 0.41s; }
-
     @media (max-width: 480px) {
-      nav {
-        padding: 0.9rem 1.25rem;
-      }
-
-      .nav-badge {
-        display: none;
-      }
-
-      .hero {
-        padding: 2.5rem 1.25rem 1.5rem;
-      }
-
-      .ethos-outer {
-        padding: 0 1.25rem;
-      }
-
-      .ethos-banner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .ethos-divider {
-        display: none;
-      }
-
-      .ethos-right {
-        text-align: left;
-      }
-
-      .stats-card {
-        margin: 1rem 1.25rem 0;
-      }
-
-      .section-wrap,
-      .apps-list,
-      .pricing-wrap,
-      .suggestion-wrap {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-      }
-
-      .mobile-card {
-        margin: 0 1.25rem 1.5rem;
-      }
-
-      .app-desc {
-        display: none;
-      }
-
-      footer {
-        padding: 1.5rem 1.25rem 2.5rem;
-      }
+      nav { padding: 0.9rem 1.25rem; }
+      .nav-badge { display: none; }
+      .hero { padding: 2.5rem 1.25rem 1.5rem; }
+      .ethos-outer { padding: 0 1.25rem; }
+      .ethos-banner { flex-direction: column; align-items: flex-start; }
+      .ethos-divider { display: none; }
+      .ethos-right { text-align: left; }
+      .stats-card { margin: 1rem 1.25rem 0; }
+      .section-wrap, .apps-list, .pricing-wrap, .suggest-wrap, .beta-wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .mobile-card { margin: 0 1.25rem 1.5rem; }
+      .app-desc { display: none; }
+      .beta-banner { flex-wrap: wrap; }
+      .beta-action { width: 100%; }
+      .beta-pill { justify-content: center; width: 100%; }
+      footer { padding: 1.5rem 1.25rem 2.5rem; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-left">
-      <div class="nav-avatar">D</div>
-      <div>
-        <div class="nav-name">Davis D · AI Wiz</div>
-        <div class="nav-sub">The Anti-subscription Software Developer</div>
-      </div>
+<nav>
+  <div class="nav-left">
+    <div class="nav-avatar">D</div>
+    <div>
+      <div class="nav-name">Davis D · AI Wiz</div>
+      <div class="nav-sub">The Anti-subscription Software Developer</div>
     </div>
-    <div class="nav-badge">7 Apps Live</div>
-  </nav>
-
-  <header class="hero fade-in visible">
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-dot"></span>
-      Independent App Studio · Norway
-    </div>
-    <h1 class="hero-title">
-      The <span class="gradient-word">Anti-subscription</span><br />
-      software developer.
-    </h1>
-    <p class="hero-desc">
-      I build focused, beautifully crafted software without the endless monthly fee.
-      My goal is simple: take useful app ideas back from subscription bloat and make them clean, affordable, and worth owning.
-      Pay once, own it forever. No lock-in, no nonsense. You can test every app for free using the linked Vercel versions below.
-    </p>
-    <div class="hero-cta-row">
-      <a href="#apps" class="btn-primary">Browse Apps ↓</a>
-      <a href="#suggestions" class="btn-secondary">💡 Suggest an App</a>
-    </div>
-  </header>
-
-  <section class="ethos-outer fade-in visible" aria-label="Studio philosophy">
-    <div class="ethos-banner">
-      <div class="ethos-left">
-        <div class="ethos-eyebrow">Studio philosophy</div>
-        <div class="ethos-headline">Software should be <span>bought</span>, not rented.</div>
-        <div class="ethos-copy">
-          Too many apps turned basic functionality into recurring payments. Davis D exists to push back:
-          simple tools, clean design, fair pricing, and software you actually get to keep.
-        </div>
-      </div>
-      <div class="ethos-divider" aria-hidden="true"></div>
-      <div class="ethos-right">
-        <div class="ethos-tagline">
-          <strong>The Anti-subscription software developer</strong>
-          Building alternatives to bloated recurring-fee apps.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats-card fade-in visible" aria-label="Studio stats">
-    <div class="stat-block">
-      <div class="stat-number">7</div>
-      <div class="stat-label">Live Apps</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-number purple">4</div>
-      <div class="stat-label">Categories</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-number">2</div>
-      <div class="stat-label">Platforms Soon</div>
-    </div>
-  </section>
-
-  <section class="section-wrap" id="apps">
-    <h2 class="section-heading">All Apps</h2>
-    <p class="section-sub">Click any app to open the free Vercel test version — everything runs in your browser.</p>
-  </section>
-
-  <div class="apps-list">
-    <a href="https://beatoff.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-1">
-      <div class="app-icon-wrap icon-bg-1">🪙</div>
-      <div class="app-info">
-        <p class="app-tag">Game</p>
-        <p class="app-name">Beat the Odds</p>
-        <p class="app-desc">Coin-flipping incremental game — how long can your streak last?</p>
-      </div>
-      <div class="app-arrow">›</div>
-    </a>
-
-    <a href="https://simplycal.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-2">
-      <div class="app-icon-wrap icon-bg-2">⚡</div>
-      <div class="app-info">
-        <p class="app-tag">Health</p>
-        <p class="app-name">SimplyCal</p>
-        <p class="app-desc">No-nonsense calorie &amp; protein tracker. Just the two numbers that matter.</p>
-      </div>
-      <div class="app-arrow">›</div>
-    </a>
-
-    <a href="https://liftlog-davis.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-3">
-      <div class="app-icon-wrap icon-bg-3">🏋️</div>
-      <div class="app-info">
-        <p class="app-tag">Fitness</p>
-        <p class="app-name">LiftLog</p>
-        <p class="app-desc">Personal workout journal — log reps, track progress, build consistency.</p>
-      </div>
-      <div class="app-arrow">›</div>
-    </a>
-
-    <a href="https://masterkeygame.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-4">
-      <div class="app-icon-wrap icon-bg-4">♟️</div>
-      <div class="app-info">
-        <p class="app-tag">Strategy</p>
-        <p class="app-name">Master Key</p>
-        <p class="app-desc">Tic-tac-toe reimagined — AI opponents, multiple modes, real depth.</p>
-      </div>
-      <div class="app-arrow">›</div>
-    </a>
-
-    <a href="https://a4-print-studio.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-5">
-      <div class="app-icon-wrap icon-bg-5">🖨️</div>
-      <div class="app-info">
-        <p class="app-tag">Tools</p>
-        <p class="app-name">A4 Print Studio</p>
-        <p class="app-desc">Design and print beautiful A4 layouts directly in your browser.</p>
-      </div>
-      <div class="app-arrow">›</div>
-    </a>
-
-    <a href="https://qr-code-generator-gamma-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-6">
-      <div class="app-icon-wrap icon-bg-6">📱</div>
-      <div class="app-info">
-        <p class="app-tag">Tools</p>
-        <p class="app-name">QR Code Generator</p>
-        <p class="app-desc">Generate clean, customizable QR codes instantly — no sign-up needed.</p>
-      </div>
-      <div class="app-arrow">›</div>
-    </a>
-
-    <a href="https://i-os-iconcreator.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-7">
-      <div class="app-icon-wrap icon-bg-7">🍎</div>
-      <div class="app-info">
-        <p class="app-tag">Tools</p>
-        <p class="app-name">iOS Icon Creator</p>
-        <p class="app-desc">Create polished iOS-style app icons fast — simple, clean, and made for Apple-style workflows.</p>
-      </div>
-      <div class="app-arrow">›</div>
-    </a>
   </div>
-
-  <section class="section-wrap">
-    <h2 class="section-heading">Pricing</h2>
-    <p class="section-sub">The whole point: useful software without getting trapped in yet another monthly payment.</p>
-  </section>
-
-  <div class="pricing-wrap fade-in">
-    <div class="pricing-strip" style="padding:1.6rem 1.8rem; display:flex; gap:1.2rem; align-items:center;">
-      <div style="width:48px;height:48px;border-radius:14px;background:var(--purple-gradient);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">💸</div>
-
-      <div style="flex:1;">
-        <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:0.3rem;">The Davis D way</div>
-        <div style="font-size:1rem;font-weight:800;color:var(--text);letter-spacing:-0.4px;margin-bottom:0.3rem;">Pay once. Own it forever.</div>
-        <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.55;">
-          One purchase. No subscriptions. No recurring charges.
-          Test every app for free using the linked Vercel versions.
-        </div>
+  <div class="nav-badge">7 Apps Live</div>
+</nav>
+<header class="hero fade-in visible">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span> Independent App Studio · Norway
+  </div>
+  <h1 class="hero-title">
+    The <span class="gradient-word">Anti-subscription</span><br /> software developer.
+  </h1>
+  <p class="hero-desc">
+    I build focused, beautifully crafted software without the endless monthly fee. My goal is simple: take useful app ideas back from subscription bloat and make them clean, affordable, and worth owning. Pay once, own it forever. No lock-in, no nonsense. You can test every app for free using the linked Vercel versions below.
+  </p>
+  <div class="hero-cta-row">
+    <a href="#apps" class="btn-primary">Browse Apps ↓</a>
+    <a href="#suggest" class="btn-secondary">💡 Suggest an App</a>
+  </div>
+</header>
+<section class="ethos-outer fade-in visible" aria-label="Studio philosophy">
+  <div class="ethos-banner">
+    <div class="ethos-left">
+      <div class="ethos-eyebrow">Studio philosophy</div>
+      <div class="ethos-headline">Software should be <span>bought</span>, not rented.</div>
+      <div class="ethos-copy">
+        Too many apps turned basic functionality into recurring payments. Davis D exists to push back: simple tools, clean design, fair pricing, and software you actually get to keep.
+      </div>
+    </div>
+    <div class="ethos-divider" aria-hidden="true"></div>
+    <div class="ethos-right">
+      <div class="ethos-tagline">
+        <strong>The Anti-subscription software developer</strong>
+        Building alternatives to bloated recurring-fee apps.
       </div>
     </div>
   </div>
-
-  <section class="section-wrap" id="suggestions">
-    <h2 class="section-heading">Suggestion Box</h2>
-    <p class="section-sub">Want an app locked behind a monthly fee? Tell me what should be liberated next.</p>
-  </section>
-
-  <div class="suggestion-wrap fade-in">
-    <div class="suggestion-box">
-      <div class="suggestion-label">Community requests</div>
-      <div class="suggestion-title">Need to be freed from an app <span>subscription?</span></div>
-      <div class="suggestion-copy">
-        Let me know what app to free. If there’s a bloated subscription product people are tired of paying for,
-        send your suggestion and I may build a cleaner pay-once alternative.
-        I’m especially interested in simple utility apps, creator tools, trackers, productivity tools, and niche everyday software.
-      </div>
-      <div class="suggestion-actions">
-        <a class="email-pill" href="mailto:Daiwizsoftware@gmail.com?subject=App%20Suggestion%20%E2%80%94%20Free%20This%20App">
-          ✉️ Daiwizsoftware@gmail.com
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <section class="section-wrap" id="mobile">
-    <h2 class="section-heading">Coming Soon</h2>
-  </section>
-
-  <section class="mobile-card fade-in">
-    <div class="mobile-card-inner">
-      <div class="mobile-icons-row">
-        <div class="mobile-platform-icon">🍎</div>
-        <div class="mobile-dot"></div>
-        <div class="mobile-dot"></div>
-        <div class="mobile-dot"></div>
-        <div class="mobile-platform-icon">🤖</div>
-      </div>
-      <p class="mobile-card-title">Going Native 📱</p>
-      <p class="mobile-card-desc">
-        All apps are being converted to native iOS and Android. Full performance, beautiful design — right in your pocket.
-        One purchase, both platforms.
-      </p>
-      <div class="platform-pill-row">
-        <div class="platform-pill">🍎 App Store</div>
-        <div class="platform-pill">🤖 Google Play</div>
-      </div>
-    </div>
-  </section>
-
-
-<section class="section-wrap" id="beta">
-  <h2 class="section-heading">Beta Testing</h2>
-  <p class="section-sub">Get early access to new apps before they officially launch — completely free.</p>
 </section>
-
-<div class="suggestion-wrap fade-in">
-  <div class="suggestion-box" style="background: linear-gradient(135deg, #1a3a2e 0%, #1a2a48 100%);">
-    <div class="suggestion-label">Early Access Program</div>
-    <div class="suggestion-title">Beta test new apps <span>for free</span></div>
-    <div class="suggestion-copy">
-      All upcoming apps can be beta tested at no cost before their full release. Get first access, try new features early, and help shape the final product. If you run into any bugs or issues during testing, just shoot me an email — every report helps make the app better for everyone.
+<section class="stats-card fade-in visible" aria-label="Studio stats">
+  <div class="stat-block">
+    <div class="stat-number">7</div>
+    <div class="stat-label">Live Apps</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-number purple">4</div>
+    <div class="stat-label">Categories</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-number">2</div>
+    <div class="stat-label">Platforms Soon</div>
+  </div>
+</section>
+<section class="section-wrap" id="apps">
+  <h2 class="section-heading">All Apps</h2>
+  <p class="section-sub">Click any app to open the free Vercel test version — everything runs in your browser.</p>
+</section>
+<div class="beta-wrap fade-in">
+  <div class="beta-banner">
+    <div class="beta-icon">🧪</div>
+    <div class="beta-text">
+      <div class="beta-label">Early Access · Free Beta Testing</div>
+      <div class="beta-headline">Try new apps before they launch — for free.</div>
+      <div class="beta-desc">All upcoming apps are open for beta testing at no cost. Found a bug? Email me directly and help shape the final release.</div>
     </div>
-    <div class="suggestion-actions">
-      <a class="email-pill" href="mailto:Daiwizsoftware@gmail.com?subject=Bug%20Report%20%E2%80%94%20Beta%20Testing">
-        🐛 Report a Bug · Daiwizsoftware@gmail.com
-      </a>
+    <div class="beta-action">
+      <a class="beta-pill" href="mailto:Daiwizsoftware@gmail.com?subject=Bug%20Report%20%E2%80%94%20Beta%20Testing">🐛 Report a Bug</a>
     </div>
   </div>
 </div>
-
-  <footer>
-    <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
-    <p class="footer-sub">Norway · 2025</p>
-    <p class="footer-ethos">The Anti-subscription software developer.</p>
-  </footer>
-
-  <script>
-    const fadeElements = document.querySelectorAll('.fade-in');
-
-    if ('IntersectionObserver' in window) {
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08 });
-
-      fadeElements.forEach((el) => obs.observe(el));
-    } else {
-      fadeElements.forEach((el) => el.classList.add('visible'));
-    }
-  </script>
+<div class="apps-list">
+  <a href="https://beatoff.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-1">
+    <div class="app-icon-wrap icon-bg-1">🪙</div>
+    <div class="app-info">
+      <p class="app-tag">Game</p>
+      <p class="app-name">Beat the Odds</p>
+      <p class="app-desc">Coin-flipping incremental game — how long can your streak last?</p>
+    </div>
+    <div class="app-arrow">›</div>
+  </a>
+  <a href="https://simplycal.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-2">
+    <div class="app-icon-wrap icon-bg-2">⚡</div>
+    <div class="app-info">
+      <p class="app-tag">Health</p>
+      <p class="app-name">SimplyCal</p>
+      <p class="app-desc">No-nonsense calorie &amp; protein tracker. Just the two numbers that matter.</p>
+    </div>
+    <div class="app-arrow">›</div>
+  </a>
+  <a href="https://liftlog-davis.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-3">
+    <div class="app-icon-wrap icon-bg-3">🏋️</div>
+    <div class="app-info">
+      <p class="app-tag">Fitness</p>
+      <p class="app-name">LiftLog</p>
+      <p class="app-desc">Personal workout journal — log reps, track progress, build consistency.</p>
+    </div>
+    <div class="app-arrow">›</div>
+  </a>
+  <a href="https://masterkeygame.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-4">
+    <div class="app-icon-wrap icon-bg-4">♟️</div>
+    <div class="app-info">
+      <p class="app-tag">Strategy</p>
+      <p class="app-name">Master Key</p>
+      <p class="app-desc">Tic-tac-toe reimagined — AI opponents, multiple modes, real depth.</p>
+    </div>
+    <div class="app-arrow">›</div>
+  </a>
+  <a href="https://a4-print-studio.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-5">
+    <div class="app-icon-wrap icon-bg-5">🖨️</div>
+    <div class="app-info">
+      <p class="app-tag">Tools</p>
+      <p class="app-name">A4 Print Studio</p>
+      <p class="app-desc">Design and print beautiful A4 layouts directly in your browser.</p>
+    </div>
+    <div class="app-arrow">›</div>
+  </a>
+  <a href="https://qr-code-generator-gamma-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-6">
+    <div class="app-icon-wrap icon-bg-6">📱</div>
+    <div class="app-info">
+      <p class="app-tag">Tools</p>
+      <p class="app-name">QR Code Generator</p>
+      <p class="app-desc">Generate clean, customizable QR codes instantly — no sign-up needed.</p>
+    </div>
+    <div class="app-arrow">›</div>
+  </a>
+  <a href="https://i-os-iconcreator.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-7">
+    <div class="app-icon-wrap icon-bg-7">🍎</div>
+    <div class="app-info">
+      <p class="app-tag">Tools</p>
+      <p class="app-name">iOS Icon Creator</p>
+      <p class="app-desc">Create polished iOS-style app icons fast — simple, clean, and made for Apple-style workflows.</p>
+    </div>
+    <div class="app-arrow">›</div>
+  </a>
+</div>
+<section class="section-wrap">
+  <h2 class="section-heading">Pricing</h2>
+  <p class="section-sub">The whole point: useful software without getting trapped in yet another monthly payment.</p>
+</section>
+<div class="pricing-wrap fade-in">
+  <div class="pricing-strip" style="padding:1.6rem 1.8rem; display:flex; gap:1.2rem; align-items:center;">
+    <div style="width:48px;height:48px;border-radius:14px;background:var(--purple-gradient);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">💸</div>
+    <div style="flex:1;">
+      <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:0.3rem;">The Davis D way</div>
+      <div style="font-size:1rem;font-weight:800;color:var(--text);letter-spacing:-0.4px;margin-bottom:0.3rem;">Pay once. Own it forever.</div>
+      <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.55;">One purchase. No subscriptions. No recurring charges. Test every app for free using the linked Vercel versions.</div>
+    </div>
+  </div>
+</div>
+<section class="section-wrap" id="suggest">
+  <h2 class="section-heading">Suggest an App</h2>
+  <p class="section-sub">Know a bloated subscription app that deserves a pay-once alternative? Tell me what to build next.</p>
+</section>
+<div class="suggest-wrap fade-in">
+  <div class="suggest-box">
+    <div class="suggest-title">What should be <span>liberated</span> next?</div>
+    <div class="suggest-copy">If there's a subscription app you're tired of paying for, I want to hear about it. Send your suggestion and I may build a cleaner, pay-once alternative. Simple utilities, trackers, creator tools, productivity apps — all fair game.</div>
+    <div class="suggest-row">
+      <a class="suggest-pill suggest-pill-primary" href="mailto:Daiwizsoftware@gmail.com?subject=App%20Suggestion%20%E2%80%94%20Free%20This%20App">✉️ Daiwizsoftware@gmail.com</a>
+    </div>
+  </div>
+</div>
+<section class="section-wrap" id="mobile">
+  <h2 class="section-heading">Coming Soon</h2>
+</section>
+<section class="mobile-card fade-in">
+  <div class="mobile-card-inner">
+    <div class="mobile-icons-row">
+      <div class="mobile-platform-icon">🍎</div>
+      <div class="mobile-dot"></div>
+      <div class="mobile-dot"></div>
+      <div class="mobile-dot"></div>
+      <div class="mobile-platform-icon">🤖</div>
+    </div>
+    <p class="mobile-card-title">Going Native 📱</p>
+    <p class="mobile-card-desc">All apps are being converted to native iOS and Android. Full performance, beautiful design — right in your pocket. One purchase, both platforms.</p>
+    <div class="platform-pill-row">
+      <div class="platform-pill">🍎 App Store</div>
+      <div class="platform-pill">🤖 Google Play</div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
+  <p class="footer-sub">Norway · 2025</p>
+  <p class="footer-ethos">The Anti-subscription software developer.</p>
+</footer>
+<script>
+  const fadeElements = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    fadeElements.forEach((el) => obs.observe(el));
+  } else {
+    fadeElements.forEach((el) => el.classList.add('visible'));
+  }
+</script>
 </body>
 </html>
