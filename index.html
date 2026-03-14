@@ -50,7 +50,6 @@
       padding: 0 2rem;
     }
 
-    /* NAV */
     nav {
       position: sticky;
       top: 0;
@@ -110,7 +109,6 @@
       box-shadow: var(--shadow-sm);
     }
 
-    /* HERO */
     .hero {
       max-width: var(--content-width);
       margin: 0 auto;
@@ -163,7 +161,7 @@
       font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.7;
-      max-width: 460px;
+      max-width: 520px;
       margin: 0 auto 2rem;
     }
 
@@ -212,7 +210,6 @@
       box-shadow: var(--shadow-lg);
     }
 
-    /* ETHOS */
     .ethos-outer {
       padding: 0 2rem;
       margin-top: 2rem;
@@ -287,15 +284,92 @@
       letter-spacing: -0.2px;
     }
 
-    /* STATS */
-    .stats-card {
+    .tagline-section,
+    .suggestion-card,
+    .stats-card,
+    .mobile-card {
       background: var(--card);
       border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tagline-wrap,
+    .suggestion-wrap,
+    .section-wrap,
+    .pricing-wrap {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .tagline-section {
+      margin: 1rem auto 0;
+      padding: 1.5rem;
+    }
+
+    .tagline-inner {
+      background: var(--card-inner);
+      border-radius: var(--radius-sm);
+      padding: 1.35rem 1.4rem;
+    }
+
+    .tagline-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.45rem;
+    }
+
+    .tagline-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .tagline-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .tagline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .pill-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+    }
+
+    .stats-card {
       padding: 1.4rem 2rem;
       margin: 1rem auto 0;
       max-width: var(--content-width);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
       display: flex;
       align-items: stretch;
     }
@@ -330,13 +404,6 @@
       margin-top: 0.25rem;
     }
 
-    /* SECTIONS */
-    .section-wrap {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
     .section-heading {
       font-size: 1.2rem;
       font-weight: 800;
@@ -353,7 +420,6 @@
       margin-bottom: 1rem;
     }
 
-    /* APP CARDS */
     .apps-list {
       display: flex;
       flex-direction: column;
@@ -421,6 +487,7 @@
     .icon-bg-4 { background: #e5ffe5; --accent-color: #4caf50; }
     .icon-bg-5 { background: #fff3dd; --accent-color: #ff9800; }
     .icon-bg-6 { background: #ffe5f0; --accent-color: #e91e8c; }
+    .icon-bg-7 { background: #e8fff7; --accent-color: #00b894; }
 
     .app-info {
       flex: 1;
@@ -474,11 +541,8 @@
       border-color: var(--dark-btn);
     }
 
-    /* PRICING */
     .pricing-wrap {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 0 2rem;
+      padding-bottom: 0.2rem;
     }
 
     .pricing-strip {
@@ -538,44 +602,84 @@
       line-height: 1.55;
     }
 
-    .pricing-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 0 1.8rem 1.5rem;
+    .suggestion-card {
+      margin: 0 auto 2rem;
+      padding: 1.5rem;
     }
 
-    .pricing-pill {
+    .suggestion-inner {
+      background: linear-gradient(135deg, rgba(124, 77, 255, 0.08) 0%, rgba(180, 77, 255, 0.12) 100%);
+      border: 1px solid rgba(124, 77, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 1.4rem;
+    }
+
+    .suggestion-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.35rem;
+    }
+
+    .suggestion-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.4px;
+      margin-bottom: 0.35rem;
+    }
+
+    .suggestion-desc {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      max-width: 500px;
+    }
+
+    .suggestion-box {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px dashed rgba(124, 77, 255, 0.28);
+      border-radius: 16px;
+      padding: 1rem 1.1rem;
+    }
+
+    .suggestion-box-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .suggestion-box-text {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .suggestion-mail {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.45rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.3rem 0.9rem;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--text-muted);
       box-shadow: var(--shadow-sm);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      word-break: break-all;
     }
 
-    .pill-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--purple);
-      flex-shrink: 0;
-    }
-
-    /* MOBILE */
     .mobile-card {
-      background: var(--card);
-      border-radius: var(--radius);
       padding: 1.5rem;
       max-width: var(--content-width);
       margin: 0 auto 2rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
     }
 
     .mobile-card-inner {
@@ -650,7 +754,6 @@
       box-shadow: var(--shadow-sm);
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 1.5rem 2rem 3rem;
@@ -679,7 +782,6 @@
       font-style: italic;
     }
 
-    /* ANIMATIONS */
     .fade-in {
       opacity: 0;
       transform: translateY(14px);
@@ -697,6 +799,7 @@
     .delay-4 { transition-delay: 0.23s; }
     .delay-5 { transition-delay: 0.29s; }
     .delay-6 { transition-delay: 0.35s; }
+    .delay-7 { transition-delay: 0.41s; }
 
     @media (max-width: 480px) {
       nav {
@@ -711,7 +814,9 @@
         padding: 2.5rem 1.25rem 1.5rem;
       }
 
-      .ethos-outer {
+      .ethos-outer,
+      .tagline-wrap,
+      .suggestion-wrap {
         padding: 0 1.25rem;
       }
 
@@ -745,10 +850,6 @@
         gap: 1rem;
       }
 
-      .pricing-pills {
-        padding: 0 1.25rem 1.25rem;
-      }
-
       .mobile-card {
         margin: 0 1.25rem 1.5rem;
       }
@@ -772,7 +873,7 @@
         <div class="nav-sub">App Studio</div>
       </div>
     </div>
-    <div class="nav-badge">6 Apps Live</div>
+    <div class="nav-badge">7 Apps Live</div>
   </nav>
 
   <header class="hero fade-in visible">
@@ -786,11 +887,12 @@
     </h1>
     <p class="hero-desc">
       Focused, beautifully crafted apps built to solve real problems without the clutter.
+      Built by <strong>The Anti-subscription software developer</strong> — making useful software people can actually own.
       Pay once, own it forever. No subscriptions, no lock-in, no nonsense. You can test every app for free using the linked Vercel versions below.
     </p>
     <div class="hero-cta-row">
       <a href="#apps" class="btn-primary">Browse Apps ↓</a>
-      <a href="#mobile" class="btn-secondary">📱 Coming to Mobile</a>
+      <a href="#suggestions" class="btn-secondary">💡 Suggest an App</a>
     </div>
   </header>
 
@@ -803,8 +905,27 @@
       <div class="ethos-divider" aria-hidden="true"></div>
       <div class="ethos-right">
         <div class="ethos-tagline">
-          <strong>Pay once. Own it forever.</strong>
-          No monthly fees. No recurring charges.
+          <strong>The Anti-subscription software developer</strong>
+          Pay once. Own it forever.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tagline-wrap fade-in visible" aria-label="Tagline details">
+    <div class="tagline-section">
+      <div class="tagline-inner">
+        <div class="tagline-label">What that means</div>
+        <div class="tagline-title">The Anti-subscription software developer</div>
+        <p class="tagline-desc">
+          I build simple, useful software without turning every feature into a monthly bill.
+          The goal is straightforward: replace bloated subscription apps with clean one-time-purchase alternatives that respect your time, attention, and wallet.
+        </p>
+        <div class="tagline-pills">
+          <div class="tagline-pill"><span class="pill-dot"></span>No recurring fees</div>
+          <div class="tagline-pill"><span class="pill-dot"></span>Useful over bloated</div>
+          <div class="tagline-pill"><span class="pill-dot"></span>Own your tools</div>
+          <div class="tagline-pill"><span class="pill-dot"></span>Built for real people</div>
         </div>
       </div>
     </div>
@@ -812,7 +933,7 @@
 
   <section class="stats-card fade-in visible" aria-label="Studio stats">
     <div class="stat-block">
-      <div class="stat-number">6</div>
+      <div class="stat-number">7</div>
       <div class="stat-label">Live Apps</div>
     </div>
     <div class="stat-block">
@@ -890,30 +1011,67 @@
       </div>
       <div class="app-arrow">›</div>
     </a>
+
+    <a href="https://i-os-iconcreator.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-7">
+      <div class="app-icon-wrap icon-bg-7">🍎</div>
+      <div class="app-info">
+        <p class="app-tag">Tools</p>
+        <p class="app-name">iOS Icon Creator</p>
+        <p class="app-desc">Create polished iOS-style app icons fast — simple, clean, and made for Apple-style workflows.</p>
+      </div>
+      <div class="app-arrow">›</div>
+    </a>
   </div>
 
   <section class="section-wrap">
     <h2 class="section-heading">Pricing</h2>
-</section>
+  </section>
 
-<div class="pricing-wrap fade-in">
-  <div class="pricing-strip" style="padding:1.6rem 1.8rem; display:flex; gap:1.2rem; align-items:center;">
-
-    <div class="pricing-icon">💸</div>
-
-    <div class="pricing-text">
-      <div class="pricing-label">The Davis D way</div>
-      <div class="pricing-headline">Pay once. Own it forever.</div>
-      <div class="pricing-body">
-        One purchase. No subscriptions. No recurring charges.
-        Test every app for free using the linked Vercel versions.
+  <div class="pricing-wrap fade-in">
+    <div class="pricing-strip">
+      <div class="pricing-strip-inner">
+        <div class="pricing-icon">💸</div>
+        <div class="pricing-text">
+          <div class="pricing-label">The Davis D way</div>
+          <div class="pricing-headline">Pay once. Own it forever.</div>
+          <div class="pricing-body">
+            One purchase. No subscriptions. No recurring charges.
+            Test every app for free using the linked Vercel versions.
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
-</div>
 
-<section class="section-wrap" id="mobile">
+  <section class="section-wrap" id="suggestions">
+    <h2 class="section-heading">Suggestion Box</h2>
+    <p class="section-sub">Got an app you wish existed without a subscription? Tell me what to free next.</p>
+  </section>
+
+  <section class="suggestion-wrap fade-in">
+    <div class="suggestion-card">
+      <div class="suggestion-inner">
+        <div class="suggestion-label">Need something freed?</div>
+        <div class="suggestion-title">Need to be freed from an app subscription?</div>
+        <p class="suggestion-desc">
+          Let me know what app to free. If there’s a subscription app you like in theory but hate paying for every month,
+          send me your idea or suggestion and it may become the next Davis D project.
+        </p>
+
+        <div class="suggestion-box">
+          <div class="suggestion-box-title">Send suggestions to:</div>
+          <p class="suggestion-box-text">
+            Tell me the app name, what it does, which features matter most, and what you wish was simpler, cheaper, or better.
+          </p>
+          <a class="suggestion-mail" href="mailto:Daiwizsoftware@gmail.com?subject=App%20Suggestion%20%E2%80%94%20Free%20This%20Subscription">
+            ✉️ Daiwizsoftware@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-wrap" id="mobile">
     <h2 class="section-heading">Coming Soon</h2>
   </section>
 
@@ -941,7 +1099,7 @@
   <footer>
     <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
     <p class="footer-sub">Norway · 2025</p>
-    <p class="footer-ethos">Software like it used to be — pay once, own it forever.</p>
+    <p class="footer-ethos">The Anti-subscription software developer — software like it used to be.</p>
   </footer>
 
   <script>
