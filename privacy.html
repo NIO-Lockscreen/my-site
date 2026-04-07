@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Beat the Odds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0805;
+    --bg-soft:   #14100a;
+    --gold:      #d4af37;
+    --gold-hi:   #f4d77a;
+    --gold-dim:  #8a7028;
+    --ink:       #f5ecd6;
+    --ink-mute:  rgba(245,236,214,0.65);
+    --line:      rgba(212,175,55,0.25);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* grain texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  /* radial vignette */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .frame {
+    position: relative;
+    z-index: 10;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+  }
+
+  /* Top ornament */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  .ornament .line {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  }
+  .ornament .diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 12px var(--gold);
+  }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 600;
+    text-align: center;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+  }
+  h1 em {
+    color: var(--gold);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-mute);
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 3.2rem 0 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+  }
+
+  strong {
+    color: var(--gold-hi);
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    margin: 1.2rem 0 1.5rem;
+    padding-left: 0;
+  }
+  ul li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.7rem;
+    color: var(--ink);
+  }
+  ul li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  a {
+    color: var(--gold-hi);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--gold-dim);
+    transition: all 0.3s;
+  }
+  a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--gold);
+  }
+
+  .contact-card {
+    margin-top: 1.5rem;
+    padding: 1.8rem 2rem;
+    border: 1px solid var(--line);
+    background: linear-gradient(135deg, rgba(212,175,55,0.04), rgba(212,175,55,0.01));
+    text-align: center;
+    font-style: italic;
+  }
+  .contact-card .label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+    margin-bottom: 0.6rem;
+  }
+  .contact-card .name {
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .gold-divider .line {
+    height: 1px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .gold-divider .diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+  }
+  .footer-logo em {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .footer-copy {
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    margin-top: 0.6rem;
+  }
+  .footer-link {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Animations */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .frame > * {
+    animation: rise 0.9s ease-out backwards;
+  }
+  .frame > *:nth-child(1) { animation-delay: 0.05s; }
+  .frame > *:nth-child(2) { animation-delay: 0.15s; }
+  .frame > *:nth-child(3) { animation-delay: 0.25s; }
+  .frame > *:nth-child(4) { animation-delay: 0.35s; }
+  .frame > *:nth-child(n+5) { animation-delay: 0.45s; }
+
+  @media (max-width: 600px) {
+    .frame { padding: 3rem 1.5rem 4rem; }
+    body { font-size: 17px; }
+    h2 { font-size: 1.15rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <div class="ornament">
+    <div class="line"></div>
+    <div class="diamond"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="eyebrow">Beat the Odds</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="subtitle">Last updated · April 7, 2026</p>
+
+  <h2>Overview</h2>
+  <p>Beat the Odds is developed by Davis D AI Wiz (ENK), based in Trondheim, Norway. This policy explains what data the app handles — which, in short, is almost nothing.</p>
+
+  <h2>Data We Collect</h2>
+  <p><strong>None, by default.</strong> Beat the Odds does not collect, store, transmit, or share any personal data, usage analytics, device identifiers, advertising IDs, location data, or contact information. There are no third-party analytics SDKs, no tracking pixels, and no advertising networks integrated into the app.</p>
+  <p>All app data — settings, progress, prestige upgrades, saves — stays on your device.</p>
+
+  <h2>Optional Leaderboard Submissions</h2>
+  <p>Beat the Odds includes an optional online leaderboard. <strong>Submission is entirely voluntary</strong> — you can play the entire game without ever submitting a score.</p>
+  <p>If you choose to submit a score, the following is sent to our leaderboard server:</p>
+  <ul>
+    <li>A display name of your choosing</li>
+    <li>Your score and any related game stats needed to rank the entry</li>
+    <li>A timestamp of the submission</li>
+  </ul>
+  <p>We do <strong>not</strong> collect your real name, email address, IP address for tracking purposes, device identifier, or any other personal information alongside your submission. You are free to enter any display name you like — including a pseudonym — and we encourage you not to use personally identifiable information.</p>
+  <p>Leaderboard entries are stored only as long as needed to display the leaderboard. You can request removal of any submission at any time by contacting us below.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Because Beat the Odds collects no personal data, it is suitable for users of all ages. The optional leaderboard does not collect any information that could identify a child.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>If this policy ever changes, the updated version will be posted here with a new "Last updated" date.</p>
+
+  <h2>Contact</h2>
+  <div class="contact-card">
+    <div class="label">Reach Out</div>
+    <div class="name">Davis D AI Wiz (ENK)</div>
+    <div>Trondheim, Norway</div>
+    <div style="margin-top:0.6rem;"><a href="mailto:daiwizsoftware@gmail.com">daiwizsoftware@gmail.com</a></div>
+  </div>
+
+  <footer>
+    <div class="gold-divider">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+    <p class="footer-logo">Davis <em>D</em> · AI Wiz</p>
+    <p class="footer-copy">© 2026 Davis D AI Wiz · All rights reserved</p>
+    <p class="footer-link"><a href="choices.html">Your Privacy Choices →</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>

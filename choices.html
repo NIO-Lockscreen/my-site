@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Privacy Choices — Beat the Odds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0805;
+    --bg-soft:   #14100a;
+    --gold:      #d4af37;
+    --gold-hi:   #f4d77a;
+    --gold-dim:  #8a7028;
+    --ink:       #f5ecd6;
+    --ink-mute:  rgba(245,236,214,0.65);
+    --line:      rgba(212,175,55,0.25);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .frame {
+    position: relative;
+    z-index: 10;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+  }
+
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  .ornament .line {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  }
+  .ornament .diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 12px var(--gold);
+  }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 600;
+    text-align: center;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+  }
+  h1 em {
+    color: var(--gold);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+  }
+
+  .manifesto {
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--ink-mute);
+    max-width: 600px;
+    margin: 2.5rem auto 4rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  .manifesto::before,
+  .manifesto::after {
+    content: '"';
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    opacity: 0.4;
+    position: absolute;
+    line-height: 1;
+  }
+  .manifesto::before { top: -0.5rem; left: -0.5rem; }
+  .manifesto::after { bottom: -1.5rem; right: -0.5rem; }
+
+  .choice {
+    margin-bottom: 2.5rem;
+    padding: 2rem 2.2rem;
+    border: 1px solid var(--line);
+    background: linear-gradient(135deg, rgba(212,175,55,0.04), rgba(212,175,55,0.01));
+    position: relative;
+    transition: all 0.4s ease;
+  }
+  .choice::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 100%;
+    background: linear-gradient(90deg, rgba(212,175,55,0.06), transparent);
+    transition: width 0.5s ease;
+    pointer-events: none;
+  }
+  .choice:hover::before { width: 100%; }
+  .choice:hover {
+    border-color: rgba(212,175,55,0.5);
+    transform: translateX(4px);
+  }
+
+  .choice-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    margin-bottom: 0.6rem;
+  }
+  .choice h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+    position: relative;
+    z-index: 1;
+  }
+  .choice p {
+    color: var(--ink);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: var(--gold-hi);
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--gold-hi);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--gold-dim);
+    transition: all 0.3s;
+  }
+  a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--gold);
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .gold-divider .line {
+    height: 1px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .gold-divider .diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+  }
+  .footer-logo em {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .footer-copy {
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    margin-top: 0.6rem;
+  }
+  .footer-link {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .frame > * {
+    animation: rise 0.9s ease-out backwards;
+  }
+  .frame > *:nth-child(1) { animation-delay: 0.05s; }
+  .frame > *:nth-child(2) { animation-delay: 0.15s; }
+  .frame > *:nth-child(3) { animation-delay: 0.25s; }
+  .frame > *:nth-child(4) { animation-delay: 0.35s; }
+  .choice:nth-of-type(1) { animation-delay: 0.45s; }
+  .choice:nth-of-type(2) { animation-delay: 0.55s; }
+  .choice:nth-of-type(3) { animation-delay: 0.65s; }
+  .choice:nth-of-type(4) { animation-delay: 0.75s; }
+  .choice:nth-of-type(5) { animation-delay: 0.85s; }
+
+  @media (max-width: 600px) {
+    .frame { padding: 3rem 1.5rem 4rem; }
+    body { font-size: 17px; }
+    .choice { padding: 1.5rem 1.4rem; }
+    .manifesto { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <div class="ornament">
+    <div class="line"></div>
+    <div class="diamond"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="eyebrow">Beat the Odds</div>
+  <h1>Your Privacy <em>Choices</em></h1>
+
+  <p class="manifesto">Beat the Odds is built around a simple principle — your data is yours, and we don't want it.</p>
+
+  <div class="choice">
+    <div class="choice-num">I.</div>
+    <h3>Leaderboard Participation</h3>
+    <p>Submitting a score is always optional. You can play the entire game, beat every streak, and never send anything to our servers. If you skip the leaderboard, <strong>no data ever leaves your device</strong>.</p>
+  </div>
+
+  <div class="choice">
+    <div class="choice-num">II.</div>
+    <h3>Your Display Name</h3>
+    <p>If you do submit a score, you choose what name appears. Use a nickname, an emoji, gibberish — whatever you like. We recommend not using your real name.</p>
+  </div>
+
+  <div class="choice">
+    <div class="choice-num">III.</div>
+    <h3>Removing a Submission</h3>
+    <p>Changed your mind about a leaderboard entry? Email <a href="mailto:daiwizsoftware@gmail.com">daiwizsoftware@gmail.com</a> with the display name and approximate submission time, and we'll remove it.</p>
+  </div>
+
+  <div class="choice">
+    <div class="choice-num">IV.</div>
+    <h3>Local Data</h3>
+    <p>All your in-game progress, streaks, prestige upgrades, and settings live on your device. Deleting the app removes them. <strong>We have no copies.</strong></p>
+  </div>
+
+  <div class="choice">
+    <div class="choice-num">V.</div>
+    <h3>Tracking &amp; Ads</h3>
+    <p>There are none. No analytics, no ad networks, no third-party SDKs watching what you do. <strong>Anti-subscription. Anti-surveillance. Always.</strong></p>
+  </div>
+
+  <footer>
+    <div class="gold-divider">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+    <p class="footer-logo">Davis <em>D</em> · AI Wiz</p>
+    <p class="footer-copy">© 2026 Davis D AI Wiz · All rights reserved</p>
+    <p class="footer-link"><a href="privacy.html">← Read the full Privacy Policy</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
