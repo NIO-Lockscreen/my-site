@@ -472,6 +472,7 @@
       gap: 1rem;
       transition: all 0.25s cubic-bezier(0.34, 1.4, 0.64, 1);
       position: relative;
+      cursor: pointer;
     }
 
     .app-card:hover {
@@ -520,6 +521,7 @@
     .icon-bg-6 { background: #ffe5f0; --accent-color: #e91e8c; }
     .icon-bg-7 { background: #e8fff7; --accent-color: #00b894; }
         .icon-bg-8 { background: #e8edff; --accent-color: #3d5afe; }
+    .icon-bg-9 { background: #fff0e0; --accent-color: #e65c00; }
 
     .app-info {
       flex: 1;
@@ -806,6 +808,28 @@
     .delay-5 { transition-delay: 0.29s; }
     .delay-6 { transition-delay: 0.35s; }
     .delay-7 { transition-delay: 0.41s; }
+    .delay-8 { transition-delay: 0.47s; }
+    .delay-9 { transition-delay: 0.53s; }
+
+    .app-store-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      background: #000;
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 0.42rem;
+      transition: opacity 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .app-store-pill:hover {
+      opacity: 0.72;
+    }
 
     @media (max-width: 480px) {
       nav { padding: 0.9rem 1.25rem; }
@@ -839,7 +863,7 @@
         <div class="nav-sub">The Anti-subscription Software Developer</div>
       </div>
     </div>
-    <div class="nav-badge">8 Apps Live</div>
+    <div class="nav-badge">9 Apps · 3 on iOS 🍎</div>
   </nav>
 
   <header class="hero fade-in visible">
@@ -879,22 +903,22 @@
 
   <section class="stats-card fade-in visible" aria-label="Studio stats">
     <div class="stat-block">
-      <div class="stat-number">8</div>
+      <div class="stat-number">9</div>
       <div class="stat-label">Live Apps</div>
     </div>
     <div class="stat-block">
-      <div class="stat-number purple">4</div>
-      <div class="stat-label">Categories</div>
+      <div class="stat-number purple">3</div>
+      <div class="stat-label">On App Store</div>
     </div>
     <div class="stat-block">
-      <div class="stat-number">2</div>
-      <div class="stat-label">Platforms Soon</div>
+      <div class="stat-number">4</div>
+      <div class="stat-label">Categories</div>
     </div>
   </section>
 
   <section class="section-wrap" id="apps">
     <h2 class="section-heading">All Apps</h2>
-    <p class="section-sub">Click any app to open the free Vercel test version — everything runs in your browser.</p>
+    <p class="section-sub">Click any app to open the free web version. Apps marked 🍎 are also live on the Apple App Store.</p>
   </section>
 
   <div class="beta-wrap fade-in">
@@ -912,35 +936,38 @@
   </div>
 
   <div class="apps-list">
-    <a href="https://beatoff.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-1">
+    <div class="app-card fade-in delay-1" onclick="window.open('https://beatoff.vercel.app/', '_blank')">
       <div class="app-icon-wrap icon-bg-1">🪙</div>
       <div class="app-info">
         <p class="app-tag">Game</p>
         <p class="app-name">Beat the Odds</p>
         <p class="app-desc">Coin-flipping incremental game — how long can your streak last?</p>
+        <a href="https://apps.apple.com/no/app/beat-the-odds-coin-flipper/id6761764348" class="app-store-pill" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🍎 App Store</a>
       </div>
       <div class="app-arrow">›</div>
-    </a>
+    </div>
 
-    <a href="https://simplycal.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-2">
+    <div class="app-card fade-in delay-2" onclick="window.open('https://simplycal.vercel.app/', '_blank')">
       <div class="app-icon-wrap icon-bg-2">⚡</div>
       <div class="app-info">
         <p class="app-tag">Health</p>
         <p class="app-name">SimplyCal</p>
         <p class="app-desc">No-nonsense calorie &amp; protein tracker. Just the two numbers that matter.</p>
+        <a href="https://apps.apple.com/no/app/simplycal/id6763246649" class="app-store-pill" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🍎 App Store</a>
       </div>
       <div class="app-arrow">›</div>
-    </a>
+    </div>
 
-    <a href="https://liftlog-davis.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-3">
+    <div class="app-card fade-in delay-3" onclick="window.open('https://liftlog-davis.vercel.app/', '_blank')">
       <div class="app-icon-wrap icon-bg-3">🏋️</div>
       <div class="app-info">
         <p class="app-tag">Fitness</p>
         <p class="app-name">LiftLog</p>
         <p class="app-desc">Personal workout journal — log reps, track progress, build consistency.</p>
+        <a href="https://apps.apple.com/no/app/liftlog-no-subscription/id6763038402" class="app-store-pill" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🍎 App Store</a>
       </div>
       <div class="app-arrow">›</div>
-    </a>
+    </div>
 
     <a href="https://masterkeygame.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-4">
       <div class="app-icon-wrap icon-bg-4">♟️</div>
@@ -981,7 +1008,17 @@
       </div>
       <div class="app-arrow">›</div>
     </a>
-    <div class="app-card app-card-no-link fade-in delay-7" style="--accent-color:#3d5afe;">
+    <a href="https://dice-rush-kappa.vercel.app" target="_blank" rel="noopener noreferrer" class="app-card fade-in delay-8">
+      <div class="app-icon-wrap icon-bg-9">🎲</div>
+      <div class="app-info">
+        <p class="app-tag">Game</p>
+        <p class="app-name">Dice Rush</p>
+        <p class="app-desc">Balatro-inspired dice roguelike — build wild combos, beat the dealer, roll your way to victory.</p>
+      </div>
+      <div class="app-arrow">›</div>
+    </a>
+
+    <div class="app-card app-card-no-link fade-in delay-9" style="--accent-color:#3d5afe;">
       <div class="app-icon-wrap icon-bg-8">🧠</div>
       <div class="app-info">
         <p class="app-tag">Wellness<span class="app-badge-ios">🍎 iOS Soon</span></p>
@@ -1030,32 +1067,29 @@
   </div>
 
   <section class="section-wrap" id="mobile">
-    <h2 class="section-heading">Coming Soon</h2>
+    <h2 class="section-heading">On the App Store</h2>
   </section>
 
   <section class="mobile-card fade-in">
     <div class="mobile-card-inner">
       <div class="mobile-icons-row">
         <div class="mobile-platform-icon">🍎</div>
-        <div class="mobile-dot"></div>
-        <div class="mobile-dot"></div>
-        <div class="mobile-dot"></div>
-        <div class="mobile-platform-icon">🤖</div>
       </div>
-      <p class="mobile-card-title">Going Native 📱</p>
+      <p class="mobile-card-title">Now Live on iOS 🎉</p>
       <p class="mobile-card-desc">
-        All apps are being converted to native iOS and Android. Full performance, beautiful design — right in your pocket. One purchase, both platforms.
+        Three apps are now available on the Apple App Store — download them, own them forever. Pay once, no subscription.
       </p>
       <div class="platform-pill-row">
-        <div class="platform-pill">🍎 App Store</div>
-        <div class="platform-pill">🤖 Google Play</div>
+        <a href="https://apps.apple.com/no/app/liftlog-no-subscription/id6763038402" class="platform-pill" style="text-decoration:none;" target="_blank" rel="noopener noreferrer">🍎 LiftLog</a>
+        <a href="https://apps.apple.com/no/app/simplycal/id6763246649" class="platform-pill" style="text-decoration:none;" target="_blank" rel="noopener noreferrer">🍎 SimplyCal</a>
+        <a href="https://apps.apple.com/no/app/beat-the-odds-coin-flipper/id6761764348" class="platform-pill" style="text-decoration:none;" target="_blank" rel="noopener noreferrer">🍎 Beat the Odds</a>
       </div>
     </div>
   </section>
 
   <footer>
     <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
-    <p class="footer-sub">Norway · 2025</p>
+    <p class="footer-sub">Norway · 2026</p>
     <p class="footer-ethos">The Anti-subscription software developer.</p>
   </footer>
 
