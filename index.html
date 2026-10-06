@@ -522,6 +522,7 @@
     .icon-bg-7 { background: #e8fff7; --accent-color: #00b894; }
         .icon-bg-8 { background: #e8edff; --accent-color: #3d5afe; }
     .icon-bg-9 { background: #fff0e0; --accent-color: #e65c00; }
+    .icon-bg-10 { background: #f6ece4; --accent-color: #b5562b; }
 
     .app-info {
       flex: 1;
@@ -777,6 +778,12 @@
       font-weight: 700;
     }
 
+    .secret-link {
+      text-decoration: none;
+      cursor: default;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .footer-sub {
       margin-top: 0.3rem;
       color: var(--text-light);
@@ -829,6 +836,27 @@
 
     .app-store-pill:hover {
       opacity: 0.72;
+    }
+
+    .app-name-sub {
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .lang-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.6rem;
+      font-weight: 700;
+      margin-top: 0.42rem;
+      letter-spacing: 0.01em;
     }
 
     @media (max-width: 480px) {
@@ -1029,6 +1057,24 @@
     </div>
   </div>
 
+  <section class="section-wrap" id="book">
+    <h2 class="section-heading">My Book</h2>
+    <p class="section-sub">A short story I wrote — free to read and download as a PDF.</p>
+  </section>
+
+  <div class="apps-list">
+    <a href="https://no-bad-days.vercel.app/" target="_blank" rel="noopener noreferrer" class="app-card fade-in" style="--accent-color:#b5562b;">
+      <div class="app-icon-wrap icon-bg-10">📖</div>
+      <div class="app-info">
+        <p class="app-tag">Book · Short story</p>
+        <p class="app-name">Ingen dårlige dager <span class="app-name-sub">(No Bad Days)</span></p>
+        <p class="app-desc">What would happen if we could remove everything that makes life painful, without removing life itself?</p>
+        <span class="lang-pill">🇳🇴 Norwegian only</span>
+      </div>
+      <div class="app-arrow">›</div>
+    </a>
+  </div>
+
   <section class="section-wrap">
     <h2 class="section-heading">Pricing</h2>
     <p class="section-sub">The whole point: useful software without getting trapped in yet another monthly payment.</p>
@@ -1088,7 +1134,7 @@
   </section>
 
   <footer>
-    <p>Built by <strong>Thomas Davis</strong> · Davis D AI Wiz Studio</p>
+    <p>Built by <a href="sofia.html" class="secret-link"><strong>Thomas Davis</strong></a> · Davis D AI Wiz Studio</p>
     <p class="footer-sub">Norway · 2026</p>
     <p class="footer-ethos">The Anti-subscription software developer.</p>
   </footer>
